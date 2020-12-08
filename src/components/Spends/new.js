@@ -1,30 +1,41 @@
 import React, { useState} from 'react';
+import { useHistory} from 'react-router-dom';
 
 function NewSpend() {
 
-
+   const [spend, setSpend] = useState("");
+   function refreshPage() {
+    window.location.reload(false);
+    }
 
     const handleSubmit = (evt) => {
+      console.log("handleSubmit is fired");
+      evt.preventDefault();
+      setSpend(spend);
+      // var retrievedObject = ####
+      newItem(JSON.parse(spend));
+      history.push('/spend');
+      refreshPage();
+
 
         //alert(`Thank you ${name} for signing up. Please sign in.`)
-
     }
 
 
 
-        async function postUser() {
-            const url = 'http://localhost:3080/users'
+        async function newItem(date, item, cat, cost) {
+            const url = 'http://localhost:3080/spends'
             await fetch(url, {
               method: 'POST',
               mode: 'cors',
-              body: JSON.stringify({}),
+              body: JSON.stringify({dateSpent:dateSpent, itemSpent:itemSpent, itemCat:itemCat, itemCost:itemCost}),
               headers: {'Content-Type': 'application/json'},
              })
             .then(function(resp) { return resp.text() }) // Convert data to json
             .then(function(data) {
                 console.log('Success', data);
-                window.localStorage.setItem('user', data);
-                console.log(window.localStorage.getItem('user'));
+                // window.localStorage.setItem('user', data); #####
+                // console.log(window.localStorage.getItem('user')); ####
             })
             .catch(function(error) {
             });
