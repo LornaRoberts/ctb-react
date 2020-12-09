@@ -1,4 +1,5 @@
 import React, { useState} from 'react';
+import './new.css';
 
 function NewSpend(){
 
@@ -44,7 +45,7 @@ function NewSpend(){
 
           return (
             <div>
-             <form >
+             <form  className="NewSpend">
               <label>
                 Date:
                 <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
@@ -66,7 +67,7 @@ function NewSpend(){
               <br></br>
               <label>
                 Cost:
-                <input type="number" name="cost" value={cost} onChange={e => setCost(e.target.value)} />
+                <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} />
               </label>
               <br></br>
               <input type="submit" value="Submit" onClick={handleSubmit}/>
