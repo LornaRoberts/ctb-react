@@ -24,17 +24,19 @@ class SingleSpend extends Component {
     }
     render () {
       const { items } = this.state;
-      console.log(this.props);
+      console.log(items);
         return (
-            <div className="postBorder">
-                <li key={this.props._id}>
-                     {this.props.dateSpent}<br></br>
-                     {this.props.itemSpent}{" "}
-                     {this.props.itemCat}{" "}
-                     {this.props.itemCost}{" "}
-                </li>
-            </div>
+          <div>
+          <li key={this.props.spends._id}>
+                     <span className="ListofSpends">{this.props.spends.itemSpent}<br></br>
+                     {this.props.spends.itemCost}{" "}
+                    @{" "}{(this.props.spends.date.split("T")[1]).slice(0,5)},
+                    {" "}{(this.props.spends.date.split("T")[0]).slice(-2)}/
+                    {(this.props.spends.split("T")[0]).slice(-5, -3)}/
+                    {(this.props.spends.split("T")[0]).slice(0, 4)}</span><br></br>
+                    </li>
+                    </div>
         )
-        }
+      };
 }
 export default SingleSpend;
