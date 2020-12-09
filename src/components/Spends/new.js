@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 
 function NewSpend(){
 
@@ -10,9 +10,9 @@ function NewSpend(){
 
 
 
-      function refreshPage() {
-        window.location.reload(false);
-      }
+      //function refreshPage() {
+      //  window.location.reload(false);
+    //  }
 
       const handleSubmit = (evt) => {
           console.log("handleSubmit is fired");
@@ -22,7 +22,8 @@ function NewSpend(){
           setCat(cat);
           setCost(cost);
            postSpend(date, spend, cat, cost);
-           console.log("spend posted")
+           console.log("spend posted");
+           alert('New Spend added!')
            //refreshPage();
       }
 
@@ -43,20 +44,20 @@ function NewSpend(){
           }
 
           return (
-            <div>
-             <form >
+
+             <form onSubmit={handleSubmit}>
               <label>
                 Date:
-                <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
+                <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
               </label><br></br>
               <label>
                 Item:
-                <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} />
+                <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
               </label>
               <br></br>
               <label>
                 Category:
-                  <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} >
+                  <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
                     <option value="cat1">Entertainment</option>
                     <option value="cat2">Sports</option>
                     <option value="cat3">Food/Drink</option>
@@ -66,11 +67,11 @@ function NewSpend(){
               <br></br>
               <label>
                 Cost:
-                <input type="number" name="cost" value={cost} onChange={e => setCost(e.target.value)} />
+                <input type="number" name="cost" value={cost} onChange={e => setCost(e.target.value)} required/>
               </label>
               <br></br>
-              <input type="submit" value="Submit" onClick={handleSubmit}/>
-            </form>        </div>
+              <input type="submit" value="Submit"/>
+            </form>
     );
 }
 
