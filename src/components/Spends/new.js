@@ -1,5 +1,8 @@
 import React, { useState} from 'react';
 import './new.css';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button'
+
 
 function NewSpend(){
 
@@ -7,7 +10,10 @@ function NewSpend(){
       const [spend, setSpend] = useState("");
       const [cat, setCat] = useState("");
       const [cost, setCost] = useState("");
+      const [show, setShow] = useState(false);
 
+      const handleClose = () => setShow(false);
+      const handleShow = () => setShow(true);
 
 
 
@@ -44,37 +50,56 @@ function NewSpend(){
           }
 
           return (
-            <div>
+            <main className="NewSpend">
+              <Button variant="primary" onClick={handleShow}>
+                Add a Spend
+              </Button>
 
-            <h1>Add a spend</h1>
-             <form className="NewSpend" onSubmit={handleSubmit}>
-              <label>
-                Date:
-                <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
-              </label><br></br>
-              <label>
-                Item:
-                <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
-              </label>
-              <br></br>
-              <label>
-                Category:
-                  <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
-                    <option value="cat1">Entertainment</option>
-                    <option value="cat2">Sports</option>
-                    <option value="cat3">Food/Drink</option>
-                    <option value="cat4">Other</option>
-                  </select>
-              </label>
-              <br></br>
-              <label>
-                Cost:
-                <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
-              </label>
-              <br></br>
-              <input type="submit" value="Submit"/>
-            </form>
-            </div>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Add a Spend</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                <div>
+
+                <h1>Add a spend</h1>
+                 <form className="NewSpend-form" onSubmit={handleSubmit}>
+                  <label>
+                    Date:
+                    <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
+                  </label><br></br>
+                  <label>
+                    Item:
+                    <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
+                  </label>
+                  <br></br>
+                  <label>
+                    Category:
+                      <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Food & Drink">Food/Drink</option>
+                        <option value="Other">Other</option>
+                      </select>
+                  </label>
+                  <br></br>
+                  <label>
+                    Cost:
+                    <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
+                  </label>
+                  <br></br>
+                  <input type="submit" value="Submit"/>
+                </form>
+                </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </main>
+
     );
 }
 
