@@ -1,13 +1,13 @@
 import './App.css';
-import NewSpend from './components/Spends/new';
-import SingleSpend from './components/Spends/listofspends';
+import Spends from './components/Spends/index';
+
+//user info fetch can go here 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NewSpend />
-        <SingleSpend />
+        <Spends />
       </header>
     </div>
   );
