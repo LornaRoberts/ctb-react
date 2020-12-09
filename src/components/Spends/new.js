@@ -11,9 +11,9 @@ function NewSpend(){
 
 
 
-      function refreshPage() {
-        window.location.reload(false);
-      }
+      //function refreshPage() {
+      //  window.location.reload(false);
+    //  }
 
       const handleSubmit = (evt) => {
           console.log("handleSubmit is fired");
@@ -23,8 +23,14 @@ function NewSpend(){
           setCat(cat);
           setCost(cost);
            postSpend(date, spend, cat, cost);
+<<<<<<< HEAD
            console.log("spend posted")
            refreshPage();
+=======
+           console.log("spend posted");
+           alert('New Spend added!')
+           //refreshPage();
+>>>>>>> aa470a5453395def744b990a7c0ad27b901fabfd
       }
 
       async function postSpend(date, spend, cat, cost) {
@@ -44,22 +50,27 @@ function NewSpend(){
           }
 
           return (
+<<<<<<< HEAD
             <div>
 
             <h1>Add a spend</h1>
              <form  className="NewSpend">
+=======
+
+             <form onSubmit={handleSubmit}>
+>>>>>>> aa470a5453395def744b990a7c0ad27b901fabfd
               <label>
                 Date:
-                <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} />
+                <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
               </label><br></br>
               <label>
                 Item:
-                <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} />
+                <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
               </label>
               <br></br>
               <label>
                 Category:
-                  <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} >
+                  <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
                     <option value="cat1">Entertainment</option>
                     <option value="cat2">Sports</option>
                     <option value="cat3">Food/Drink</option>
@@ -69,11 +80,11 @@ function NewSpend(){
               <br></br>
               <label>
                 Cost:
-                <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} />
+                <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
               </label>
               <br></br>
-              <input type="submit" value="Submit" onClick={handleSubmit}/>
-            </form>        </div>
+              <input type="submit" value="Submit"/>
+            </form>
     );
 }
 
