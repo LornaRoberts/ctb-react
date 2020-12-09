@@ -24,7 +24,7 @@ describe("Simple new spend page", function (){
   it("All the fields are required", function(){
     cy.visit('http://localhost:3000/');
     cy.get('form').find('[type="submit"]').click();
-
+    
   });
 
 })
