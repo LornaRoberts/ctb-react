@@ -23,8 +23,11 @@ describe("Simple new spend page", function (){
 
   it("All the fields are required", function(){
     cy.visit('http://localhost:3000/');
+    cy.get('input:invalid');
     cy.get('form').find('[type="submit"]').click();
-    
+    cy.get('form').find('[type="date"]').then(($input) => {
+    expect($input[0].validationMessage).equal('Please fill in this field.')
+  })
   });
 
 })
