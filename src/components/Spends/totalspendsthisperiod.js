@@ -22,7 +22,7 @@ function TSTP(){
   , [])
 
   return (
-    <h1>The total spend this period: £{total}</h1>
+    <h1 id="tstp">The total spend this period: £<span id="tstp-value">{total}</span></h1>
   );
 }
 export default TSTP;
