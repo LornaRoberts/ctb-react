@@ -24,7 +24,7 @@ function NewSpend(){
           setCost(cost);
            postSpend(date, spend, cat, cost);
            console.log("spend posted")
-           //refreshPage();
+           refreshPage();
       }
 
       async function postSpend(date, spend, cat, cost) {
@@ -45,6 +45,8 @@ function NewSpend(){
 
           return (
             <div>
+
+            <h1>Add a spend</h1>
              <form  className="NewSpend">
               <label>
                 Date:
