@@ -11,9 +11,9 @@ function NewSpend(){
 
 
 
-      //function refreshPage() {
-      //  window.location.reload(false);
-    //  }
+      function refreshPage() {
+       window.location.reload(false);
+     }
 
       const handleSubmit = (evt) => {
           console.log("handleSubmit is fired");
@@ -23,9 +23,8 @@ function NewSpend(){
           setCat(cat);
           setCost(cost);
            postSpend(date, spend, cat, cost);
-           console.log("spend posted");
-           alert('New Spend added!')
-           //refreshPage();
+           console.log("spend posted")
+           refreshPage();
       }
 
       async function postSpend(date, spend, cat, cost) {
@@ -45,8 +44,10 @@ function NewSpend(){
           }
 
           return (
+            <div>
 
-             <form onSubmit={handleSubmit}>
+            <h1>Add a spend</h1>
+             <form className="NewSpend" onSubmit={handleSubmit}>
               <label>
                 Date:
                 <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
@@ -73,6 +74,7 @@ function NewSpend(){
               <br></br>
               <input type="submit" value="Submit"/>
             </form>
+            </div>
     );
 }
 
