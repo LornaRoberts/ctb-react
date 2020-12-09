@@ -11,9 +11,9 @@ function NewSpend(){
 
 
 
-      //function refreshPage() {
-      //  window.location.reload(false);
-    //  }
+      function refreshPage() {
+       window.location.reload(false);
+     }
 
       const handleSubmit = (evt) => {
           console.log("handleSubmit is fired");
@@ -74,6 +74,7 @@ function NewSpend(){
               <br></br>
               <input type="submit" value="Submit"/>
             </form>
+            </div>
     );
 }
 
