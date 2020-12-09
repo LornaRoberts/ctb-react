@@ -23,14 +23,8 @@ function NewSpend(){
           setCat(cat);
           setCost(cost);
            postSpend(date, spend, cat, cost);
-<<<<<<< HEAD
            console.log("spend posted")
            refreshPage();
-=======
-           console.log("spend posted");
-           alert('New Spend added!')
-           //refreshPage();
->>>>>>> aa470a5453395def744b990a7c0ad27b901fabfd
       }
 
       async function postSpend(date, spend, cat, cost) {
@@ -50,15 +44,10 @@ function NewSpend(){
           }
 
           return (
-<<<<<<< HEAD
             <div>
 
             <h1>Add a spend</h1>
-             <form  className="NewSpend">
-=======
-
-             <form onSubmit={handleSubmit}>
->>>>>>> aa470a5453395def744b990a7c0ad27b901fabfd
+             <form className="NewSpend" onSubmit={handleSubmit}>
               <label>
                 Date:
                 <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
