@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
@@ -12,27 +12,6 @@ function EditButton (singleSpend) {
   const [show, setShow] = useState(false);
 
   console.log(singleSpend.spend);
-
-  // useEffect(() => {
-  //   fetch(`http://localhost:3080/spends/${singleSpend.spend._id}`, {mode: 'cors', method: 'GET'})
-  //   .then(res => res.json())
-  //   .then((result) => {
-  //       setDate(result.dateSpent);
-  //       setSpend(result.itemSpent);
-  //       setCat(result.itemCat);
-  //       setCost(result.itemCost);
-  //       console.log(result);
-  //     }
-  //   )
-  //   .catch(
-  //     (error) => {
-  //       if(error) {throw error;}
-  //     }
-  //   )  
-  // }, [])
-
-  
-  
 
   function refreshPage() {
    window.location.reload(false);
@@ -53,7 +32,7 @@ function EditButton (singleSpend) {
   async function postSpend(spendId, date, spend, cat, cost){
       const url = 'http://localhost:3080/spends/' + spendId;
       await fetch(url, {
-        method: 'FIND',
+        method: 'PATCH',
         mode: 'cors',
         body: JSON.stringify({dateSpent: date, itemSpent: spend, itemCat: cat, itemCost: cost}),
         headers: {'Content-Type': 'application/json'},

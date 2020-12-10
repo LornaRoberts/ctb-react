@@ -12,7 +12,7 @@ class SingleSpend extends Component {
           <Table>
 
 
-    <tbody key={this.props.spend._id} className="SingleSpend">
+    <tbody className="SingleSpend">
           <tr>
           <td className="SingleSpend-row">
                     {(this.props.spend.dateSpent.split("T")[1]).slice(0,5)},
