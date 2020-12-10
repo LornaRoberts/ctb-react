@@ -1,15 +1,15 @@
 import './App.css';
-import NewSpend from './components/Spends/new';
-import SingleSpend from './components/Spends/listofspends';
-import TSTP from './components/Spends/totalspendsthisperiod';
+import NavBarComponent from './components/navBar';
+import Spends from './components/Spends/index';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-      <TSTP />
-        <NewSpend />
-        <SingleSpend />
+        <NavBarComponent />
+        <Spends />
       </header>
     </div>
   );
