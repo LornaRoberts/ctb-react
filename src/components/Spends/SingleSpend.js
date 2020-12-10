@@ -30,7 +30,7 @@ class SingleSpend extends Component {
                     {this.props.spend.itemCost}{" "}
                     </td>
                     <td>
-                    <EditButton spendId = {this.props.spend._id} />
+                    <EditButton spend={this.props.spend} />
                     </td>
                   </tr>
                   </tbody>

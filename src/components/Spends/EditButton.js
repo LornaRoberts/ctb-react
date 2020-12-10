@@ -1,8 +1,8 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-function EditButton (spendId) {
+function EditButton (singleSpend) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [date, setDate] = useState("");
@@ -10,6 +10,29 @@ function EditButton (spendId) {
   const [cat, setCat] = useState("");
   const [cost, setCost] = useState("");
   const [show, setShow] = useState(false);
+
+  console.log(singleSpend.spend);
+
+  useEffect(() => {
+    fetch(`http://localhost:3080/spends/${singleSpend.spend._id}`, {mode: 'cors', method: 'GET'})
+    .then(res => res.json())
+    .then((result) => {
+        setDate(result.dateSpent);
+        setSpend(result.itemSpent);
+        setCat(result.itemCat);
+        setCost(result.itemCost);
+        console.log(result);
+      }
+    )
+    .catch(
+      (error) => {
+        if(error) {throw error;}
+      }
+    )  
+  }, [])
+
+  
+  
 
   function refreshPage() {
    window.location.reload(false);
@@ -22,25 +45,25 @@ function EditButton (spendId) {
       setSpend(spend);
       setCat(cat);
       setCost(cost);
-       postSpend(spendId, date, spend, cat, cost);
+       postSpend(singleSpend.spend._id, date, spend, cat, cost);
        console.log("spend posted");
        refreshPage();
   }
 
-  async function getSpend(spendId) {
-    fetch("http://localhost:3080/spends", {mode: 'cors', method: 'GET'})
-    .then(res => res.json())
-    .then(
-      (result) => {
-        setDate(result.dateSpent);
-        setSpend(result.itemSpent);
-        setCat(result.itemCat);
-        setCost(result.itemCost);
-      },
-      (error) => {
-      if(error) {throw error;}
-  })
-}
+  // async function getSpend(spendId) {
+  //   fetch("http://localhost:3080/spends", {mode: 'cors', method: 'GET'})
+  //   .then(res => res.json())
+  //   .then(
+  //     (result) => {
+  //       setDate(result.dateSpent);
+  //       setSpend(result.itemSpent);
+  //       setCat(result.itemCat);
+  //       setCost(result.itemCost);
+  //     },
+  //     (error) => {
+  //     if(error) {throw error;}
+  //   })
+  // }
 
   async function postSpend(spendId, date, spend, cat, cost){
       const url = 'http://localhost:3080/spends/' + spendId;
@@ -57,7 +80,7 @@ function EditButton (spendId) {
       .catch(function(error) {
       });
       }
-window.onload = () => {getSpend(spendId)};
+//window.onload = () => {getSpend(spendId)};
 
 
   return(
