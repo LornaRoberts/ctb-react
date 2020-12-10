@@ -14,7 +14,6 @@ class SingleSpend extends Component {
     <tbody key={this.props.spend._id} className="SingleSpend">
           <tr>
           <td className="SingleSpend-row">
-                    {(this.props.spend.dateSpent.split("T")[1]).slice(0,5)},
                     {" "}{(this.props.spend.dateSpent.split("T")[0]).slice(-2)}/
                     {(this.props.spend.dateSpent.split("T")[0]).slice(-5, -3)}/
                     {(this.props.spend.dateSpent.split("T")[0]).slice(0, 4)}{" "}

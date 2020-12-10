@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './totalspendsthisperiod.css';
 
 
 
@@ -22,7 +23,7 @@ function TSTP(){
   , [])
 
   return (
-    <h1 id="tstp">The total spend this period: £<span id="tstp-value">{total}</span></h1>
+    <h1 className="TSTP" id="tstp">The total spend this period: £<span id="tstp-value">{total}</span></h1>
   );
 }
 export default TSTP;
