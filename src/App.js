@@ -1,7 +1,6 @@
 import './App.css';
-import SingleSpend from './components/Spends/listofspends';
-import NavBarComponent from './navBar';
-import NewSpend from './components/Spends/new.js';
+import NavBarComponent from './components/navBar';
+import Spends from './components/Spends/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -9,8 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBarComponent />
-        <NewSpend />
-        <SingleSpend/>
+        <Spends />
       </header>
     </div>
   );

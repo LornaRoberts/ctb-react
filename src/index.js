@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBarComponent from './components/navBar';
 
 
 <link
@@ -16,7 +15,6 @@ import NavBarComponent from './components/navBar';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBarComponent/>
     <App/>
   </React.StrictMode>,
   document.getElementById('root')

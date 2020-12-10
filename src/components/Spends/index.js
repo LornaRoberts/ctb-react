@@ -1,15 +1,13 @@
-import ListOfSpends from './ListOfSpends';
+import ListOfSpends from './listofspends';
 import NewSpend from './new';
 
-function App() {
+function Spends() {
   return (
     <div className="App">
-      <header className="App-header">
-      <NewSpend />
-        <ListOfSpends />
-      </header>
+     <NewSpend />
+      <ListOfSpends />
     </div>
   );
 }
 
-export default App;
+export default Spends;
