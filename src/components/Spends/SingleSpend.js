@@ -25,7 +25,7 @@ class SingleSpend extends Component {
                     {this.props.spend.itemCat} {" "}
                     </td>
                     <td className="SingleSpend-row">
-                    {this.props.spend.itemCost}{" "}
+                    {'£'}{this.props.spend.itemCost}{" "}
                     </td>
                   </tr>
                   </tbody>
