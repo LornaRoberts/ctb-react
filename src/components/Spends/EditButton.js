@@ -63,7 +63,7 @@ function EditButton (singleSpend) {
                    <form className="EditButton-form" onSubmit={handleSubmit}>
                     <label>
                       Date:
-                      <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
+                      <input type="date" name="date" value={date.substring(0,10)} onChange={e => setDate(e.target.value)} required/>
                     </label><br></br>
                     <label>
                       Item:
