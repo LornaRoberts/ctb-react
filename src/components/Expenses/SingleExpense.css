@@ -1,0 +1,17 @@
+Table {
+  table-layout: fixed;
+  text-align: left;
+}
+
+.SingleExpense {
+  text-align: left !important;
+  color: white;
+}
+
+.SingleExpense-row{
+  text-align: left;
+}
+
+td {
+  text-align: left;
+}
