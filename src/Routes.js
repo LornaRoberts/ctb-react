@@ -16,4 +16,8 @@ const Routes =() => {
         </div>
     )
 }
+<<<<<<< HEAD
 export default Routes;
+=======
+export default Routes;
+>>>>>>> Create
