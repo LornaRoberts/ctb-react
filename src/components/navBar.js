@@ -13,7 +13,7 @@ render() {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="nav" style={{position: 'absolute', left: '40%'}}>
                 <Nav.Link href="/home">Home</Nav.Link>
-                <Nav.Link href="/regularspends">Regular Spends</Nav.Link>
+                <Nav.Link href="/expenses">Regular Spends</Nav.Link>
                 <Nav.Link href="/archive">Arvchive</Nav.Link>
                 <Nav.Link href="/spends">Spending Log</Nav.Link>
                 </Nav>

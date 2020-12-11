@@ -1,17 +1,16 @@
 import './App.css';
-import NavBarComponent from './components/navBar';
-import Spends from './components/Spends/index';
-import Expenses from './components/Expenses/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from './Routes'
+import {BrowserRouter as Router} from 'react-router-dom';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBarComponent />
-        <Spends />
-        <Expenses />
+      <Router >
+        <Routes />
+        </ Router >
       </header>
     </div>
   );
