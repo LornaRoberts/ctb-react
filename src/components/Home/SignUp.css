@@ -1,0 +1,26 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #732bf0 !important;
+    color: #fcd603;
+    border: #732bf0;
+    box-shadow: 5px 10px black;
+
+}
+
+.SignUp-form{
+  text-align: center;
+}
+
+.SignUp-enter {
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 5px 10px black;
+  margin-right: 2em;
+
+}
+.SignUp-header{
+  background-color: #732bf0;
+  color: #fcd603;
+
+}

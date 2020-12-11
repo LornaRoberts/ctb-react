@@ -8,11 +8,11 @@ class SingleSpend extends Component {
 
     render () {
         return (
-          <div>
+          <div className="SingleSpend mx-auto">
           <Table>
 
 
-    <tbody className="SingleSpend">
+    <tbody className="SingleSpend-body">
           <tr>
           <td className="SingleSpend-row">
                     {" "}{(this.props.spend.dateSpent.split("T")[0]).slice(-2)}/

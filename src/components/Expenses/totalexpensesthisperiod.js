@@ -3,6 +3,7 @@ import './totalexpensesthisperiod.css';
 
 
 
+
 function TETP(){
   const [total, setTotal] = useState('');
   useEffect(()=>{

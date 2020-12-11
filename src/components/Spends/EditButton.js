@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import './EditButton.css';
+import Form from 'react-bootstrap/Form';
+
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 function EditButton (singleSpend) {
   const handleClose = () => setShow(false);
@@ -13,6 +20,7 @@ function EditButton (singleSpend) {
   const [cat, setCat] = useState(singleSpend.spend.itemCat);
   const [cost, setCost] = useState(singleSpend.spend.itemCost);
   const [show, setShow] = useState(false);
+
 
   console.log(singleSpend.spend);
 
@@ -82,29 +90,28 @@ function EditButton (singleSpend) {
 
   return(
               <main className="EditButton">
-                <Button variant="primary" onClick={handleShow}>
-                  Edit
-                </Button>
+
+              <FontAwesomeIcon icon={faEdit} className="EditButton-icon" onClick={handleShow} />
+
 
                 <Modal show={show} onHide={handleClose}>
-                  <Modal.Header>
-                    <Modal.Title>Edit</Modal.Title>
+                  <Modal.Header className="EditButton-header">
+                    <Modal.Title className="mx-auto EditButton-title">Update Your Spend</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
                   <div>
 
-                  <h1>Update your spend</h1>
-                   <form className="EditButton-form" onSubmit={handleSubmit}>
-                    <label>
+                   <Form className="EditButton-form" onSubmit={handleSubmit}>
+                    <Form.Label>
                       Date:
-                      <input type="date" name="date" value={date.substring(0,10)} onChange={e => setDate(e.target.value)} required/>
-                    </label><br></br>
-                    <label>
+                      <Form.Control type="date" name="date" value={date.substring(0,10)} onChange={e => setDate(e.target.value)} required/>
+                    </Form.Label><br></br>
+                    <Form.Label>
                       Item:
-                      <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
-                    </label>
+                      <Form.Control type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
+                    </Form.Label>
                     <br></br>
-                    <label>
+                    <Form.Label>
                       Category:
                         <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
                           <option value="Entertainment">Entertainment</option>
@@ -112,15 +119,16 @@ function EditButton (singleSpend) {
                           <option value="Food & Drink">Food/Drink</option>
                           <option value="Other">Other</option>
                         </select>
-                    </label>
+                    </Form.Label>
                     <br></br>
-                    <label>
+                    <Form.Label>
                       Cost:
-                      <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
-                    </label>
+                      <Form.Control type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
+                    </Form.Label>
                     <br></br>
-                    <Button onClick={handleDelete}>Delete</Button><input type="submit" value="Submit"/>
-                  </form>
+                       <Button variant="danger" className="btn-danger shadow p-3 mb-5 delete" onClick={handleDelete}>Delete</Button>
+                    <Button type="submit" className="btn-primary shadow p-3 mb-5">Submit</Button>
+                  </Form>
                   </div>
                   </Modal.Body>
                   <Modal.Footer>
