@@ -18,14 +18,6 @@ class ListOfSpends extends React.Component {
 
     componentDidMount() {
 
-
-    //   var retrievedObject = window.localStorage.getItem('user');
-    //   if (retrievedObject) {
-    //     var userJSON = {user_id: JSON.parse(retrievedObject)._id, user_name: JSON.parse(retrievedObject).name};
-    //     this.setState({user_id: userJSON.user_id});
-    //     this.setState({user_name: userJSON.user_name});
-    //     this.setState({user: JSON.stringify(userJSON)})
-    //   }
           fetch("http://localhost:3080/spends", {mode: 'cors', method: 'GET'})
           .then(res => res.json())
           .then(
@@ -63,7 +55,7 @@ class ListOfSpends extends React.Component {
                 <div className="postBackground">
                     <ul>
                         {items.map(spend => (
-                         < SingleSpend spend={spend} />
+                         < SingleSpend key={spend._id} spend={spend} />
                         ))}
                     </ul>
                 </div>

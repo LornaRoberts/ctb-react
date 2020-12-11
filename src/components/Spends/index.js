@@ -1,10 +1,10 @@
 import ListOfSpends from './listofspends';
 import NewSpend from './new';
-import TSTP from './totalspendsthisperiod'; 
+import Tstp from './totalspendsthisperiod';
 function Spends() {
   return (
     <div className="App">
-    <TSTP /> 
+    <Tstp />
      <NewSpend />
       <ListOfSpends />
     </div>
