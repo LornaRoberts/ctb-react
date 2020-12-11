@@ -56,7 +56,7 @@ function NewSpend(){
               </Button>
 
               <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                   <Modal.Title>Add a Spend</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
