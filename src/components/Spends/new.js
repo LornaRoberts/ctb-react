@@ -51,11 +51,11 @@ function NewSpend(){
 
           return (
             <main className="NewSpend">
-              <Button variant="primary" onClick={handleShow}>
+              <Button id="add" variant="primary" onClick={handleShow}>
                 Add a Spend
               </Button>
 
-              <Modal show={show} onHide={handleClose}>
+              <Modal id="addModal" show={show} onHide={handleClose}>
                 <Modal.Header>
                   <Modal.Title>Add a Spend</Modal.Title>
                 </Modal.Header>

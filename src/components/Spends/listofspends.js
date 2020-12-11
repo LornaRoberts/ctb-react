@@ -53,7 +53,7 @@ class ListOfSpends extends React.Component {
                 <div className="main">
                 <h1 className="postHeading">Spends</h1>
                 <div className="postBackground">
-                    <ul>
+                    <ul id="list">
                         {items.map(spend => (
                          < SingleSpend key={spend._id} spend={spend} />
                         ))}
