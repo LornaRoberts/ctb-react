@@ -24,7 +24,11 @@ class ListOfSpends extends React.Component {
             (result) => {
               this.setState({
                 isLoaded: true,
-                items: result.spends
+                items: result.spends.sort((a, b) => {
+                  if (a.dateSpent > b.dateSpent) return -1;
+                  if (a.dateSpent < b.dateSpent) return 1;
+                  return 0;
+                })
               });
               return result.spends;
             },

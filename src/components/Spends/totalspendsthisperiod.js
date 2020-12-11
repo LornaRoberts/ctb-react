@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './totalspendsthisperiod.css';
 
 
+
 function TSTP(){
   const [total, setTotal] = useState('');
   useEffect(()=>{
