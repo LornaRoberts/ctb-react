@@ -15,7 +15,6 @@ class SingleSpend extends Component {
     <tbody className="SingleSpend">
           <tr>
           <td className="SingleSpend-row">
-                    {(this.props.spend.dateSpent.split("T")[1]).slice(0,5)},
                     {" "}{(this.props.spend.dateSpent.split("T")[0]).slice(-2)}/
                     {(this.props.spend.dateSpent.split("T")[0]).slice(-5, -3)}/
                     {(this.props.spend.dateSpent.split("T")[0]).slice(0, 4)}{" "}
@@ -27,7 +26,7 @@ class SingleSpend extends Component {
                     {this.props.spend.itemCat} {" "}
                     </td>
                     <td className="SingleSpend-row">
-                    {this.props.spend.itemCost}{" "}
+                    {'£'}{this.props.spend.itemCost}{" "}
                     </td>
                     <td>
                     <EditButton spend={this.props.spend} />
