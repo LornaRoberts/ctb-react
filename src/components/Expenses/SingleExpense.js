@@ -26,7 +26,7 @@ class SingleExpense extends Component {
                     {this.props.expense.expenseCat} {" "}
                     </td>
                     <td className="SingleExpense-row">
-                    {'£'}{this.props.expense.expenseCost}{" "}
+                    {'£'}{this.props.expense.expenseCost.toFixed(2)}{" "}
                     </td>
                     <td>
                     <EditButton expense={this.props.expense} />
