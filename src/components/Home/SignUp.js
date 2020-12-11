@@ -22,13 +22,29 @@ function SignUp () {
         setPassword(password);
         setPassword2(password2);
             if (password === password2) {
-                //postUser(email, password);   
+                postUser(email, password);
                 console.log("user created")
-                refreshPage(); 
+                refreshPage();
             } else {
                 alert('Passwords do not match');
             }
     }
+
+    async function postUser(email, password) {
+        const url = 'http://localhost:3080/users/new'
+        await fetch(url, {
+          method: 'POST',
+          mode: 'cors',
+          body: JSON.stringify({email: email, password: password}),
+          headers: {'Content-Type': 'application/json'},
+         })
+        .then(function(resp) { return resp.json() }) // Convert data to json
+        .then(function(data) {
+          console.log('Success', data);
+        })
+        .catch(function(error) {
+        });
+        }
 
     return (
         <main className="SignUp">

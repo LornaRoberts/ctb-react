@@ -4,9 +4,9 @@ import SignUp from './SignUp';
 function Home () {
 
     function checkIfLoggedIn() {
-
+      
     }
-    
+
     return (
         <div>
         <homePage />
