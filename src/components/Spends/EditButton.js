@@ -53,7 +53,7 @@ function EditButton (singleSpend) {
                 </Button>
 
                 <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
+                  <Modal.Header>
                     <Modal.Title>Edit</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
