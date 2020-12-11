@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './SingleSpend.css';
-import Table from 'react-bootstrap/Table'
+import Table from 'react-bootstrap/Table';
+import EditButton from './EditButton';
 
 
 class SingleSpend extends Component {
@@ -11,7 +12,7 @@ class SingleSpend extends Component {
           <Table>
 
 
-    <tbody key={this.props.spend._id} className="SingleSpend">
+    <tbody className="SingleSpend">
           <tr>
           <td className="SingleSpend-row">
                     {(this.props.spend.dateSpent.split("T")[1]).slice(0,5)},
@@ -27,6 +28,9 @@ class SingleSpend extends Component {
                     </td>
                     <td className="SingleSpend-row">
                     {this.props.spend.itemCost}{" "}
+                    </td>
+                    <td>
+                    <EditButton spend={this.props.spend} />
                     </td>
                   </tr>
                   </tbody>
