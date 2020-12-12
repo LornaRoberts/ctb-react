@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Login from './Login';
 import SignUp from './SignUp';
 
 function Home () {
 
-    function checkIfLoggedIn() {
-      
-    }
+    const [userObj, setUserObj] = useState();
 
-    return (
-        <div>
-        <homePage />
-        <SignUp />
-        </div>
-    )
+    useEffect(() => {
+        var retrievedObject = window.localStorage.getItem('userObj');
+        if (retrievedObject) {
+          setUserObj(retrievedObject);
+
+        }
+    }, [])    
+    
+    if (userObj) {
+        return (
+            <div>
+            <homePage />
+            You are signed in
+            </div>
+        )
+    } else {
+        return (
+            <div>
+            <SignUp /> or <Login />
+            </div>
+        )
+    }
+    
 }
 
 export default Home;
