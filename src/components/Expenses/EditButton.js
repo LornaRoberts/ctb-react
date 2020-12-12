@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+
 function EditButton (singleExpense) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -29,6 +32,37 @@ function EditButton (singleExpense) {
        refreshPage();
   }
 
+  const handleDelete = () => {
+    console.log("handleDelete is fired");
+    // closes the modal so it doesn't obscure the alert
+    handleClose();
+
+    confirmAlert({
+      title: 'Delete Expense',
+      message: 'Are you sure to do this?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            //run the delete API fetch here
+            fetch(`http://localhost:3080/expenses/${singleExpense.expense._id}`, {mode: 'cors', method: 'DELETE'})
+            .then(res => res.json())
+            .then(() => {
+                alert('Expense deleted');
+                refreshPage();
+              }
+            )
+            .catch((error) => {throw error;})
+          }
+        },
+        {
+          label: 'No',
+          onClick: () => {}
+        }
+      ]
+    });
+  }
+
   async function postExpense(expenseId, date, expense, cat, cost){
       const url = 'http://localhost:3080/expenses/' + expenseId;
       await fetch(url, {
@@ -53,7 +87,7 @@ function EditButton (singleExpense) {
                 </Button>
 
                 <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
+                  <Modal.Header>
                     <Modal.Title>Edit</Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
@@ -93,7 +127,7 @@ function EditButton (singleExpense) {
                       <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
                     </label>
                     <br></br>
-                    <input type="submit" value="Submit"/>
+                    <Button onClick={handleDelete}>Delete</Button><input type="submit" value="Submit"/>
                   </form>
                   </div>
                   </Modal.Body>

@@ -82,11 +82,11 @@ function EditButton (singleSpend) {
 
   return(
               <main className="EditButton">
-                <Button variant="primary" onClick={handleShow}>
+                <Button id="edit" variant="primary" onClick={handleShow}>
                   Edit
                 </Button>
 
-                <Modal show={show} onHide={handleClose}>
+                <Modal id="editNodal" show={show} onHide={handleClose}>
                   <Modal.Header>
                     <Modal.Title>Edit</Modal.Title>
                   </Modal.Header>
@@ -119,7 +119,7 @@ function EditButton (singleSpend) {
                       <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
                     </label>
                     <br></br>
-                    <Button onClick={handleDelete}>Delete</Button><input type="submit" value="Submit"/>
+                    <Button id="delete" onClick={handleDelete}>Delete</Button><input type="submit" value="Submit"/>
                   </form>
                   </div>
                   </Modal.Body>

@@ -29,7 +29,7 @@ function NewExpense(){
           setCat(cat);
           setCost(cost);
            postExpense(date, expense, cat, cost);
-           console.log("spend posted")
+           console.log("expense posted")
            refreshPage();
       }
 
@@ -52,11 +52,11 @@ function NewExpense(){
           return (
             <main className="NewExpense">
               <Button variant="primary" onClick={handleShow}>
-                Add a Spend
+                Add an Expense
               </Button>
 
               <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
+                <Modal.Header>
                   <Modal.Title>Add an Expense</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
