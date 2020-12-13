@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
+import TotalsPage from './TotalsPage';
 
 function Home () {
 
@@ -17,8 +18,7 @@ function Home () {
     if (userObj) {
         return (
             <div>
-            
-            You are signed in
+                <TotalsPage />
             </div>
         )
     } else {
