@@ -33,7 +33,7 @@ function Login () {
             headers: {'Content-Type': 'application/json'},
           }).then(function(resp) { return resp.text() }) // Convert data to json
           .then(function(data) {
-              if (data === "Wrong username or password") {
+              if (data === "Wrong username or password.") {
                   alert(data);
                   return;
               } else {
