@@ -28,7 +28,7 @@ function Spends() {
     <div className="App">
     <Tstp />
      <NewSpend userId={userID}/>
-      <ListOfSpends />
+      <ListOfSpends userId={userID}/>
     </div>
   );
   }
