@@ -9,7 +9,7 @@ function TotalsPage (props) {
         <div>
             <h1>Totals</h1>
             <TSTP userId={props.userId}/>
-            <TETP />
+            <TETP userId={props.userId}/>
         </div>
     )
 }

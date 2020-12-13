@@ -5,10 +5,12 @@ import Tetp from './totalexpensesthisperiod';
 function Expenses() {
 
   const [userObj, setUserObj] = useState();
+  const [userID, setUserID] = useState();
 
   useEffect(() => {
       var retrievedObject = window.localStorage.getItem('userObj');
       if (retrievedObject) {
+        setUserID(JSON.parse(retrievedObject)._id);
         setUserObj(retrievedObject);
 
       }
@@ -24,9 +26,9 @@ function Expenses() {
 
   return (
     <div className="App">
-    <Tetp />
-     <NewExpense />
-      <ListOfExpenses />
+    <Tetp userId={userID} />
+     <NewExpense userId={userID} />
+      <ListOfExpenses userId={userID} />
     </div>
   );
   }
