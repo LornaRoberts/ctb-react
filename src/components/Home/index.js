@@ -17,7 +17,7 @@ function Home () {
     if (userObj) {
         return (
             <div>
-            <homePage />
+            
             You are signed in
             </div>
         )

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import LogOut from './Home/LogOut';
 
 class NavBarComponent extends React.Component {
 
@@ -22,7 +23,6 @@ class NavBarComponent extends React.Component {
     }
 
 render() {
-    //const { loggedIn } = this.state;
     return (
         <div className="NavBar">
         <Navbar variant="light" style={{backgroundColor: "teal"}} expand="lg" fixed="top" className="title">
@@ -34,7 +34,7 @@ render() {
                 <Nav.Link href="/expenses">Regular Spends</Nav.Link>
                 <Nav.Link href="/archive">Archive</Nav.Link>
                 <Nav.Link href="/spends">Spending Log</Nav.Link>
-                {this.state.loggedIn && <Nav.Link href="/spends">LogOut</Nav.Link>}
+                {this.state.loggedIn && <LogOut />}
                 </Nav>
             </Navbar.Collapse>
             </Navbar>
