@@ -3,7 +3,25 @@
     color: #fcd603;
     border: #732bf0;
     box-shadow: 5px 10px black;
-    margin-left: 3em;
+    margin-left: 2em;
+}
+
+@media only screen and (min-width : 300px) {
+  .EditButton-icon{
+    font-size: 2em;
+  }
+}
+@media only screen and (min-width : 350px) {
+  .EditButton-icon{
+    font-size: 2em;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .EditButton-icon{
+    font-size: 1.5em;
+
+  }
 }
 
 .EditButton-icon{

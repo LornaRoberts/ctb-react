@@ -1,4 +1,39 @@
 .TSTP{
-  margin-top: 130px;
+  margin-top: 5em;
   color: #732bf0 !important;
+}
+
+@media only screen and (min-width : 300px) {
+  .TSTP{
+    font-size: 1em;
+    margin-top: 10em;
+  }
+}
+@media only screen and (min-width : 350px) {
+  .TSTP{
+    font-size: 1.5em;
+    margin-top: 6em;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .TSTP{
+    font-size: 2em;
+    margin-top: 4em;
+
+  }
+}
+  @media only screen and (min-width : 1440px) {
+    .TSTP{
+      font-size: 2em;
+      margin-top: 3em;
+
+    }
+}
+@media only screen and (min-width : 2000px) {
+  .TSTP{
+    font-size: 2em;
+    margin-top: 1em;
+
+  }
 }

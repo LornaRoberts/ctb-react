@@ -23,17 +23,21 @@ function NewExpense(){
        window.location.reload(false);
      }
 
-      const handleSubmit = (evt) => {
-          console.log("handleSubmit is fired");
-          evt.preventDefault();
-          setDate(date);
-          setExpense(expense);
-          setCat(cat);
-          setCost(cost);
-           postExpense(date, expense, cat, cost);
-           console.log("expense posted")
-           refreshPage();
-      }
+  const handleSubmit = (evt) => {
+      console.log("handleSubmit is fired");
+      evt.preventDefault();
+      setDate(date);
+      setExpense(expense);
+      setCat(cat);
+      setCost(cost);
+       postExpense(date, expense, cat, cost);
+       console.log("expense posted")
+       refreshPage();
+
+  }
+
+
+
 
       async function postExpense(date, expense, cat, cost) {
           const url = 'http://localhost:3080/expenses'
@@ -46,18 +50,20 @@ function NewExpense(){
           .then(function(resp) { return resp.json() }) // Convert data to json
           .then(function(data) {
             console.log('Success', data);
+
           })
           .catch(function(error) {
           });
           }
 
+          
           return (
             <main className="NewExpense">
-              <Button variant="primary" className="shadow p-3 mb-5" size="lg" onClick={handleShow}>
+              <Button variant="primary" className="shadow p-3 mb-5 NewExpense-add" onClick={handleShow}>
                 Add an Expense
               </Button>
 
-              <Modal show={show} onHide={handleClose}>
+              <Modal show={show} onHide={handleClose} className="modal">
                 <Modal.Header className="NewExpense-header">
                   <Modal.Title className="NewExpense-title mx-auto">Add an Expense</Modal.Title>
                 </Modal.Header>
@@ -96,7 +102,9 @@ function NewExpense(){
                     <Form.Control type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
                   </Form.Label>
                   <br></br>
-                  <Form.Control type="submit" value="Submit" className="btn-primary NewExpense-submit shadow p-3 mb-5"/>
+                  <Form.Control type="submit" value="Submit"
+                  className="btn-primary NewExpense-submit shadow p-3 mb-5 mx-auto"/>
+
                 </Form>
                 </div>
                 </Modal.Body>

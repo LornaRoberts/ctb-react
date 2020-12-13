@@ -89,7 +89,7 @@ function NewSpend(){
                     <Form.Control type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
                   </Form.Label>
                   <br></br>
-                  <Form.Control type="submit" value="Submit" className="btn-primary NewSpend-submit shadow p-3 mb-5"/>
+                  <Form.Control type="submit" value="Submit" className="btn-primary NewSpend-submit shadow p-3 mb-5 mx-auto"/>
                   </Form.Group>
                 </Form>
                 </div>

@@ -4,6 +4,7 @@ import './totalexpensesthisperiod.css';
 
 
 
+
 function TETP(){
   const [total, setTotal] = useState('');
   useEffect(()=>{
@@ -17,11 +18,16 @@ function TETP(){
         .then(function(data) {
           console.log('Success', data);
           setTotal(data.totalExpenseThisPeriod)
+
         })
         .catch(function(error) {
         });
         }
   , [])
+
+
+
+
 
   return (
 

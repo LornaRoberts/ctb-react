@@ -19,9 +19,9 @@ let logoMargin = {
         <div className="NavBar">
         <Navbar variant="light" style={{backgroundColor: "#fcd603"}} expand="lg" fixed="top" className="title">
             <Navbar.Brand href="/home"><img src={Logo} alt="Budget Whisperer logo" style={{...logoSize, ...logoMargin}}/></Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Toggle aria-controls="basic-navbar-nav"  className="mx-auto"/>
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="nav" style={{position: 'absolute', left: '40%'}}>
+                <Nav className="mr-auto">
                 <Nav.Link href="/home" className="Navbar-link">Home</Nav.Link>
                 <Nav.Link href="/expenses" className="Navbar-link">Regular Spends</Nav.Link>
                 <Nav.Link href="/archive" className="Navbar-link">Archive</Nav.Link>
