@@ -18,7 +18,7 @@ class ListOfSpends extends React.Component {
 
     componentDidMount() {
 
-          fetch(`http://localhost:3080/spends/${this.props.userId}`, {mode: 'cors', method: 'GET'})
+          fetch(`http://localhost:3080/spends/user/${this.props.userId}`, {mode: 'cors', method: 'GET'})
           .then(res => res.json())
           .then(
             (result) => {

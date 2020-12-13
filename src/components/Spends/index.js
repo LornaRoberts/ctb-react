@@ -26,7 +26,7 @@ function Spends() {
   } else {
   return (
     <div className="App">
-    <Tstp />
+    <Tstp userId={userID}/>
      <NewSpend userId={userID}/>
       <ListOfSpends userId={userID}/>
     </div>
