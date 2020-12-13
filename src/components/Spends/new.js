@@ -15,7 +15,7 @@ function NewSpend(props){
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
 
-      console.log('userprops:', props.user);
+      console.log('userprops:', props.userId);
 
       function refreshPage() {
        window.location.reload(false);
@@ -28,7 +28,7 @@ function NewSpend(props){
           setSpend(spend);
           setCat(cat);
           setCost(cost);
-           postSpend(date, spend, cat, cost, props.user);
+           postSpend(date, spend, cat, cost, props.userId);
            console.log("spend posted")
            refreshPage();
       }
