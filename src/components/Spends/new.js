@@ -51,7 +51,7 @@ function NewSpend(props){
           }
 
           const minDate = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
-          const maxDate = new Date(new Date().getFullYear(), new Date().getMonth(), 31);
+          const maxDate = new Date(new Date().getFullYear(), new Date().getMonth()+1, 0);
 
 
           return (
