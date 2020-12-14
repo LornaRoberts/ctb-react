@@ -1,13 +1,13 @@
 import React from 'react';
-
+import SingleModal from './singleModal';
 function MonthModal (props) {
   if (props) {
   const month = props.input;
+  const totals = month[0].map((spend) => (spend.itemCost))
+  .reduce((a, b) => a + b, 0);
     return (
         <div>
-        <p>Month number: {props.monthNo}</p>
-        {month[0].map((spend) => (spend.itemCost))
-        .reduce((a, b) => a + b, 0)}
+        <SingleModal total={totals} name={props.monthNo} />
         </div>
     )
   } else {
