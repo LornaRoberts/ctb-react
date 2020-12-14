@@ -1,0 +1,16 @@
+.Logout {
+  margin-top: -0.25em;
+  font-size: 0.5em;
+}
+
+.logout-button{
+  margin-left: 2em;
+}
+
+
+
+.btn-primary:hover,  .btn-primary:active, .btn-primary.active {
+  background-color: #521dad !important;
+  color: #fcd603;
+
+}

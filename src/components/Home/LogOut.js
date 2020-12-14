@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
-
+import './logout.css';
 function LogOut () {
 
     function refreshPage() {
@@ -29,12 +29,12 @@ function LogOut () {
             ]
           });
     }
-    
+
 
 
     return (
-        <main className="Login">
-            <Button onClick={handleClick}>LogOut</Button>
+        <main className="Logout">
+            <Button className="shadow p-3 mb-5 logout-buttons" size="sm" onClick={handleClick}>LogOut</Button>
         </main>
     )
 
