@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
 
 
-function NewExpense(){
+function NewExpense(props){
 
       const [date, setDate] = useState("");
       const [expense, setExpense] = useState("");
@@ -28,17 +28,17 @@ function NewExpense(){
           setExpense(expense);
           setCat(cat);
           setCost(cost);
-           postExpense(date, expense, cat, cost);
+           postExpense(date, expense, cat, cost, props.userId);
            console.log("expense posted")
            refreshPage();
       }
 
-      async function postExpense(date, expense, cat, cost) {
+      async function postExpense(date, expense, cat, cost, userid) {
           const url = 'http://localhost:3080/expenses'
           await fetch(url, {
             method: 'POST',
             mode: 'cors',
-            body: JSON.stringify({expenseDate: date, expense: expense, expenseCat: cat, expenseCost: cost}),
+            body: JSON.stringify({userId: userid, expenseDate: date, expense: expense, expenseCat: cat, expenseCost: cost}),
             headers: {'Content-Type': 'application/json'},
            })
           .then(function(resp) { return resp.json() }) // Convert data to json

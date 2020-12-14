@@ -3,10 +3,11 @@ import './totalspendsthisperiod.css';
 
 
 
-function TSTP(){
+function TSTP(props){
   const [total, setTotal] = useState('');
   useEffect(()=>{
-        const url = 'http://localhost:3080/totals'
+      
+        const url = 'http://localhost:3080/totals/' + props.userId;
          fetch(url, {
           method: 'GET',
           mode: 'cors',
