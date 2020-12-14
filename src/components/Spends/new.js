@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+
 function NewSpend(props){
 
       const [date, setDate] = useState("");
@@ -49,7 +50,12 @@ function NewSpend(props){
           });
           }
 
+          const minDate = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+          const maxDate = new Date(new Date().getFullYear(), new Date().getMonth(), 31);
+
+
           return (
+
             <main className="NewSpend">
               <Button variant="primary" className="shadow p-3 mb-5" size="lg" onClick={handleShow}>
                 Add a Spend
@@ -65,10 +71,10 @@ function NewSpend(props){
 
                  <Form className="NewSpend-form" onSubmit={handleSubmit}>
                  <Form.Group controlId="formNewSpend">
-
+            
                   <Form.Label>
                     Date:
-                    <Form.Control type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
+                    <Form.Control type="date" name="date" value={date} min={minDate.toISOString().split("T")[0]} max={maxDate.toISOString().split("T")[0]} onChange={e => setDate(e.target.value)} required/>
                   </Form.Label><br></br>
                   <Form.Label>
                     Item:
