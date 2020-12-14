@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-
+import MonthModal from './MonthModal';
 
 function Archive() {
 
   const [userObj, setUserObj] = useState();
   const [userID, setUserID] = useState();
-  const [items, setItems] = useState();
-
+  const [items, setItems] = useState([]);
+  const [hasData, setData] = useState(false);
   const yearSpends= (array) => {
     const tempYear = [[], [], [], [], [], [], [], [], [], [], [], []];
     for (let i = 12; i >= 1; i--) {
@@ -23,12 +23,11 @@ function Archive() {
       }
       fetch(`http://localhost:3080/spends/user/${userID}`, {mode: 'cors', method: 'GET'})
       .then(res => res.json())
-      .then(
-        (result) => {
-          setItems(result.spends);
-          console.log('Raw data', result.spends)
-          console.log(yearSpends(result.spends))
-          return result.spends;
+      .then( (result) => {
+          if (result) {
+          setData(true);
+          setItems(yearSpends(result.spends));
+        }
         },
         (error) => {
           throw error;
@@ -42,13 +41,20 @@ function Archive() {
           <p>You need to be signed in.</p>
         </div>
     )
-} else {
+} else if (hasData) {
 
   return (
     <div className="App">
+    {items.map((item) => (<MonthModal key={items.indexOf(item)} monthNo={items.indexOf(item) + 1} input={item}/>))}
     </div>
   );
-  }
+} else {
+  return (
+  <div className="App">
+  <p>nothing returned</p>
+  </div>
+)
+}
 }
 
 export default Archive;
