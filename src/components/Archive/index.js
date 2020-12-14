@@ -5,7 +5,15 @@ function Archive() {
 
   const [userObj, setUserObj] = useState();
   const [userID, setUserID] = useState();
+  const [items, setItems] = useState();
 
+  const yearSpends= (array) => {
+    const tempYear = [[], [], [], [], [], [], [], [], [], [], [], []];
+    for (let i = 12; i >= 1; i--) {
+      tempYear[i - 1].push(array.filter(item => parseInt(item.dateSpent.substring(5, 7)) === i))
+    };
+    return tempYear;
+  };
   useEffect(() => {
       var retrievedObject = window.localStorage.getItem('userObj');
       if (retrievedObject) {
@@ -13,7 +21,20 @@ function Archive() {
         setUserObj(retrievedObject);
 
       }
-  }, [])
+      fetch(`http://localhost:3080/spends/user/${userID}`, {mode: 'cors', method: 'GET'})
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setItems(result.spends);
+          console.log('Raw data', result.spends)
+          console.log(yearSpends(result.spends))
+          return result.spends;
+        },
+        (error) => {
+          throw error;
+          });
+
+  }, [userID])
 
   if (!userObj) {
     return (
