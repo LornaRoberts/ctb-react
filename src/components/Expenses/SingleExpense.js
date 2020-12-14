@@ -5,8 +5,8 @@ import EditButton from './EditButton';
 
 
 class SingleExpense extends Component {
-
     render () {
+  
         return (
           <div>
           <Table>

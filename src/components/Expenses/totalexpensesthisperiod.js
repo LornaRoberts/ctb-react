@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './totalexpensesthisperiod.css';
+import BarChart from './barChart';
 
 
 
@@ -16,7 +17,6 @@ function TETP(props){
          })
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
-          console.log('Success', data);
           setTotal(data.totalExpenseThisPeriod)
 
         })
@@ -30,9 +30,10 @@ function TETP(props){
 
 
   return (
-
+<div>
     <h1 className="TETP" id="tetp">The total expenses for this period: £<span id="tetp-value">{total}</span></h1>
-
+    <BarChart />
+   </div>
   );
 }
 export default TETP;

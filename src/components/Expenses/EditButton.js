@@ -16,26 +16,22 @@ function EditButton (singleExpense) {
   const [cost, setCost] = useState(singleExpense.expense.expenseCost);
   const [show, setShow] = useState(false);
 
-  console.log(singleExpense.expense);
 
   function refreshPage() {
    window.location.reload(false);
  }
 
   const handleSubmit = (evt) => {
-      console.log("handleSubmit is fired");
       evt.preventDefault();
       setDate(date);
       setExpense(expense);
       setCat(cat);
       setCost(cost);
        postExpense(singleExpense.expense._id, date, expense, cat, cost);
-       console.log("expense posted");
        refreshPage();
   }
 
   const handleDelete = () => {
-    console.log("handleDelete is fired");
     // closes the modal so it doesn't obscure the alert
     handleClose();
 
@@ -75,7 +71,6 @@ function EditButton (singleExpense) {
        })
       .then(function(resp) { return resp.json() }) // Convert data to json
       .then(function(data) {
-        console.log('Success', data);
       })
       .catch(function(error) {
       });
