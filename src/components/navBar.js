@@ -45,7 +45,7 @@ let logoMargin = {
                 <Nav.Link href="/expenses" className="Navbar-link">Regular Spends</Nav.Link>
                 <Nav.Link href="/archive" className="Navbar-link">Archive</Nav.Link>
                 <Nav.Link href="/spends" className="Navbar-link">Spending Log</Nav.Link>
-                {this.state.loggedIn && <LogOut />}
+                <span className="login">{this.state.loggedIn && <LogOut />}</span>
 
                 </Nav>
             </Navbar.Collapse>
