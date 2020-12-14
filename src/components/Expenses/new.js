@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 
 
-function NewExpense(){
+function NewExpense(props){
 
       const [date, setDate] = useState("");
       const [expense, setExpense] = useState("");
@@ -23,28 +23,26 @@ function NewExpense(){
        window.location.reload(false);
      }
 
-  const handleSubmit = (evt) => {
-      console.log("handleSubmit is fired");
-      evt.preventDefault();
-      setDate(date);
-      setExpense(expense);
-      setCat(cat);
-      setCost(cost);
-       postExpense(date, expense, cat, cost);
-       console.log("expense posted")
-       refreshPage();
 
-  }
-
-
+      const handleSubmit = (evt) => {
+          console.log("handleSubmit is fired");
+          evt.preventDefault();
+          setDate(date);
+          setExpense(expense);
+          setCat(cat);
+          setCost(cost);
+           postExpense(date, expense, cat, cost, props.userId);
+           console.log("expense posted")
+           refreshPage();
+      }
 
 
-      async function postExpense(date, expense, cat, cost) {
+      async function postExpense(date, expense, cat, cost, userid) {
           const url = 'http://localhost:3080/expenses'
           await fetch(url, {
             method: 'POST',
             mode: 'cors',
-            body: JSON.stringify({expenseDate: date, expense: expense, expenseCat: cat, expenseCost: cost}),
+            body: JSON.stringify({userId: userid, expenseDate: date, expense: expense, expenseCat: cat, expenseCost: cost}),
             headers: {'Content-Type': 'application/json'},
            })
           .then(function(resp) { return resp.json() }) // Convert data to json
@@ -66,6 +64,7 @@ function NewExpense(){
               <Modal show={show} onHide={handleClose} className="modal">
                 <Modal.Header className="NewExpense-header">
                   <Modal.Title className="NewExpense-title mx-auto">Add an Expense</Modal.Title>
+
                 </Modal.Header>
                 <Modal.Body>
                 <div>

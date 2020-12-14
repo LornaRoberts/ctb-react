@@ -7,32 +7,39 @@ import Form from 'react-bootstrap/Form';
 
 
 function SignUp () {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => {setShow(false);
+      window.sessionStorage.clear();}
+    const handleShow = () => {setShow(true);
+      window.sessionStorage.clear();}
 
     function refreshPage() {
         window.location.reload(false);
       }
 
-    const handleSubmit = (evt) => {
+    const handleSubmit = async (evt) => {
         evt.preventDefault();
-        setEmail(email)
+        window.sessionStorage.clear();
+        setEmail(email);
+        await checkEmail(email);
+        console.log(sessionStorage.getItem('status'));
         setPassword(password);
         setPassword2(password2);
-            if (password === password2) {
+            if (password === password2 && window.sessionStorage.getItem('status') === "available") {
                 postUser(email, password);
                 console.log("user created")
                 refreshPage();
-            } else {
-                alert('Passwords do not match');
+                window.sessionStorage.clear();
+            }  else {
+              alert('Passwords do not match or the email is inccorect');
+              window.sessionStorage.clear();
             }
-    }
+          }
+
 
     async function postUser(email, password) {
         const url = 'http://localhost:3080/users/new'
@@ -48,6 +55,22 @@ function SignUp () {
         })
         .catch(function(error) {
         });
+        }
+
+        async function checkEmail(email) {
+          const url = 'http://localhost:3080/users/exist';
+          await fetch(url, {
+            method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify({email: email}),
+            headers: {'Content-Type': 'application/json'},
+          }).then(function(resp) { return resp.json() }) // Convert data to json
+          .then(function(data) {
+            //console.log('Success', data.status);
+            window.sessionStorage.setItem('status', data.status);
+          })
+          .catch(function(error) {
+          });
         }
 
     return (

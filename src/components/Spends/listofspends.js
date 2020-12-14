@@ -19,7 +19,7 @@ class ListOfSpends extends React.Component {
 
     componentDidMount() {
 
-          fetch("http://localhost:3080/spends", {mode: 'cors', method: 'GET'})
+          fetch(`http://localhost:3080/spends/user/${this.props.userId}`, {mode: 'cors', method: 'GET'})
           .then(res => res.json())
           .then(
             (result) => {
@@ -54,7 +54,7 @@ class ListOfSpends extends React.Component {
                 <div className="main">
                 <h1 className="postHeading" style={{color:'black'}}>Spends</h1>
                 <div className="postBackground">
-                    <ul>
+                    <ul id="list">
                         {items.map(spend => (
                          < SingleSpend key={spend._id} spend={spend} />
                         ))}

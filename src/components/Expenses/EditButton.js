@@ -8,6 +8,9 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+
 function EditButton (singleExpense) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -88,8 +91,10 @@ function EditButton (singleExpense) {
               <FontAwesomeIcon icon={faEdit} className="EditButton-icon" onClick={handleShow} />
 
                 <Modal show={show} onHide={handleClose}>
+
                   <Modal.Header className="EditButton-header">
-                    <Modal.Title className="mx-auto EditButton-title">Update your Expenses</Modal.Title>
+                    <Modal.Title className="mx-auto EditButton-title">Update Your Expenses</Modal.Title>
+
                   </Modal.Header>
                   <Modal.Body>
                   <div>
@@ -129,6 +134,7 @@ function EditButton (singleExpense) {
                     <Button variant="danger" className="btn-danger shadow p-3 mb-5 delete" onClick={handleDelete}>Delete</Button>
                  <Button type="submit" className="btn-primary shadow p-3 mb-5">Submit</Button>
                   </Form>
+
                   </div>
                   </Modal.Body>
                   <Modal.Footer>

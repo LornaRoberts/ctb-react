@@ -4,7 +4,26 @@ import Nav from 'react-bootstrap/Nav';
 import Logo from "../images/budget_buddy.png";
 import "./navBar.css";
 
+import LogOut from './Home/LogOut';
+
 class NavBarComponent extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: false
+        };
+
+    }
+
+    componentDidMount(){
+        const retrievedUser = window.localStorage.getItem('userObj');
+        if (retrievedUser) {
+          this.setState({
+              loggedIn: true
+            });
+        }
+    }
 
 render() {
 
@@ -26,6 +45,8 @@ let logoMargin = {
                 <Nav.Link href="/expenses" className="Navbar-link">Regular Spends</Nav.Link>
                 <Nav.Link href="/archive" className="Navbar-link">Archive</Nav.Link>
                 <Nav.Link href="/spends" className="Navbar-link">Spending Log</Nav.Link>
+                {this.state.loggedIn && <LogOut />}
+
                 </Nav>
             </Navbar.Collapse>
             </Navbar>

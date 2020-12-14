@@ -97,6 +97,7 @@ function EditButton (singleSpend) {
                 <Modal show={show} onHide={handleClose}>
                   <Modal.Header className="EditButton-header">
                     <Modal.Title className="mx-auto EditButton-title">Update Your Spend</Modal.Title>
+
                   </Modal.Header>
                   <Modal.Body>
                   <div>
@@ -129,6 +130,7 @@ function EditButton (singleSpend) {
                        <Button variant="danger" className="btn-danger shadow p-3 mb-5 delete" onClick={handleDelete}>Delete</Button>
                     <Button type="submit" className="btn-primary shadow p-3 mb-5">Submit</Button>
                   </Form>
+
                   </div>
                   </Modal.Body>
                   <Modal.Footer>

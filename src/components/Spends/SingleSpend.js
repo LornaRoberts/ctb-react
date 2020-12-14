@@ -26,7 +26,7 @@ class SingleSpend extends Component {
                     {this.props.spend.itemCat} {" "}
                     </td>
                     <td className="SingleSpend-row">
-                    {'£'}{this.props.spend.itemCost}{" "}
+                    {'£'}{this.props.spend.itemCost.toFixed(2)}{" "}
                     </td>
                     <td>
                     <EditButton spend={this.props.spend} />
