@@ -3,7 +3,9 @@ import './totalexpensesthisperiod.css';
 
 
 
+
 function TETP(props){
+
   const [total, setTotal] = useState('');
   useEffect(()=>{
         const url = 'http://localhost:3080/expenses/total/' + props.userId
@@ -16,11 +18,16 @@ function TETP(props){
         .then(function(data) {
           console.log('Success', data);
           setTotal(data.totalExpenseThisPeriod)
+
         })
         .catch(function(error) {
         });
         }
   , [])
+
+
+
+
 
   return (
 

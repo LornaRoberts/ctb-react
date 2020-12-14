@@ -1,0 +1,30 @@
+.main{
+  text-align: center;
+}
+
+@media only screen and (min-width : 30px) {
+  .main{
+    width: 100%;
+    font-size: 0.5em;
+  }
+}
+@media only screen and (min-width : 350px) {
+  .main{
+    width: 100%;
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .main{
+    width: 100%;
+    font-size: 0.75em;;
+
+  }
+}
+
+
+
+.postBackground{
+  text-align: center;
+}

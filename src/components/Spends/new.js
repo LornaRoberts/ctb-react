@@ -1,8 +1,8 @@
 import React, { useState} from 'react';
 import './new.css';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button'
-
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 function NewSpend(props){
 
@@ -51,29 +51,31 @@ function NewSpend(props){
 
           return (
             <main className="NewSpend">
-              <Button id="add" variant="primary" onClick={handleShow}>
+              <Button variant="primary" className="shadow p-3 mb-5" size="lg" onClick={handleShow}>
                 Add a Spend
               </Button>
 
-              <Modal id="addModal" show={show} onHide={handleClose}>
-                <Modal.Header>
-                  <Modal.Title>Add a Spend</Modal.Title>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header className="NewSpend-header">
+                 <Modal.Title className="NewSpend-title mx-auto">Add a Spend</Modal.Title>
+
                 </Modal.Header>
                 <Modal.Body>
                 <div>
 
-                <h1>Add a spend</h1>
-                 <form className="NewSpend-form" onSubmit={handleSubmit}>
-                  <label>
+                 <Form className="NewSpend-form" onSubmit={handleSubmit}>
+                 <Form.Group controlId="formNewSpend">
+
+                  <Form.Label>
                     Date:
-                    <input type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
-                  </label><br></br>
-                  <label>
+                    <Form.Control type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
+                  </Form.Label><br></br>
+                  <Form.Label>
                     Item:
-                    <input type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
-                  </label>
+                    <Form.Control type="text" name="name" value={spend} onChange={e => setSpend(e.target.value)} required/>
+                  </Form.Label>
                   <br></br>
-                  <label>
+                  <Form.Label>
                     Category:
                       <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
                         <option value="Entertainment">Entertainment</option>
@@ -81,15 +83,16 @@ function NewSpend(props){
                         <option value="Food & Drink">Food/Drink</option>
                         <option value="Other">Other</option>
                       </select>
-                  </label>
+                  </Form.Label>
                   <br></br>
-                  <label>
+                  <Form.Label>
                     Cost:
-                    <input type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
-                  </label>
+                    <Form.Control type="number" name="cost" value={cost} step="0.01" placeholder="0.00" onChange={e => setCost(e.target.value)} required/>
+                  </Form.Label>
                   <br></br>
-                  <input type="submit" value="Submit"/>
-                </form>
+                  <Form.Control type="submit" value="Submit" className="btn-primary NewSpend-submit shadow p-3 mb-5 mx-auto"/>
+                  </Form.Group>
+                </Form>
                 </div>
                 </Modal.Body>
                 <Modal.Footer>

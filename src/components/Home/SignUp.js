@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import './SignUp.css';
+import Form from 'react-bootstrap/Form';
+
+
 
 function SignUp () {
     const [email, setEmail] = useState("");
@@ -71,39 +75,40 @@ function SignUp () {
 
     return (
         <main className="SignUp">
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="shadow p-3 mb-5 mx-auto" size="lg" onClick={handleShow}>
           Sign Up
         </Button>
 
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header>
-            <Modal.Title>Sign Up</Modal.Title>
+          <Modal.Header className="SignUp-header">
+            <Modal.Title className="SignUp-title mx-auto">Sign Up</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <div>
 
-          <h1>Enter your details</h1>
-           <form className="SignUp-form" onSubmit={handleSubmit}>
-            <label>
+          <h1 className="SignUp-enter">Enter your details</h1>
+           <Form className="SignUp-form mx-auto" onSubmit={handleSubmit}>
+            <Form.Label>
               Email:
-              <input type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
-            </label><br></br>
-            <label>
+              <Form.Control type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
+            </Form.Label><br></br>
+            <Form.Label>
               Password:
-              <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} required/>
-            </label>
-            <label>
-            Confirm Password:
-            <input type="password" name="password2" value={password2} onChange={e => setPassword2(e.target.value)} required/>
-          </label>
+              <Form.Control type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} required/>
+            </Form.Label>
             <br></br>
-            <input type="submit" value="Submit"/>
-          </form>
+            <Form.Label>
+            Confirm Password:
+            <Form.Control type="password" name="password2" value={password2} onChange={e => setPassword2(e.target.value)} required/>
+          </Form.Label>
+            <br></br>
+            <Button type="submit" value="Submit" className="shadow p-3 mb-5">Submit</Button>
+          </Form>
           </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Opps I made a booboo
+            <Button variant="secondary"  onClick={handleClose}>
+              Close
             </Button>
           </Modal.Footer>
         </Modal>

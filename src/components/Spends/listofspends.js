@@ -1,5 +1,6 @@
 import React from 'react';
 import SingleSpend from './SingleSpend';
+import './listofspends.css';
 
 
 class ListOfSpends extends React.Component {
@@ -51,7 +52,7 @@ class ListOfSpends extends React.Component {
         } else {
             return (
                 <div className="main">
-                <h1 className="postHeading">Spends</h1>
+                <h1 className="postHeading" style={{color:'black'}}>Spends</h1>
                 <div className="postBackground">
                     <ul id="list">
                         {items.map(spend => (

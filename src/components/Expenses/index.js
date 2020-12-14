@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ListOfExpenses from './listofexpenses';
 import NewExpense from './new';
 import Tetp from './totalexpensesthisperiod';
+
 function Expenses() {
 
   const [userObj, setUserObj] = useState();
