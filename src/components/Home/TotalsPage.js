@@ -1,6 +1,7 @@
 import React from 'react'
 import TETP from '../Expenses/totalexpensesthisperiod'
 import TSTP from '../Spends/totalspendsthisperiod'
+import TML from './totalMoneyLeft'
 
 function TotalsPage (props) {
 
@@ -10,6 +11,7 @@ function TotalsPage (props) {
             <h1>Totals</h1>
             <TSTP userId={props.userId}/>
             <TETP userId={props.userId}/>
+            <TML userId={props.userId}/>
         </div>
     )
 }
