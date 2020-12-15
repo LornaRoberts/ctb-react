@@ -11,42 +11,42 @@ class ListOfExpenses extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            items: [],
-            show: false
-        };
+            show: false,
+        }
 
-    }
-
+}
 
     componentDidMount() {
 
-          fetch(`http://localhost:3080/expenses/user/${this.props.userId}`, {mode: 'cors', method: 'GET'})
-          .then(res => res.json())
-          .then(
-            (result) => {
-              this.setState({
-                isLoaded: true,
-                items: result.expense.sort((a, b) => {
-                  if (a.expenseDate > b.expenseDate) return -1;
-                  if (a.expenseDate < b.expenseDate) return 1;
-                  return 0;
-                })
-              });
-              return result.expense;
-            },
-            (error) => {
-              this.setState({
-                isLoaded: true,
-                error
-              });
-            }
-          )
-    }
+              fetch(`http://localhost:3080/expenses/user/${this.props.userId}`, {mode: 'cors', method: 'GET'})
+              .then(res => res.json())
+              .then(
+                (result) => {
+                  this.setState({
+                    isLoaded: true,
+                    items: result.expense.sort((a, b) => {
+                      if (a.expenseDate > b.expenseDate) return -1;
+                      if (a.expenseDate < b.expenseDate) return 1;
+                      return 0;
+                    })
+                  });
+                  return result.expense;
+                },
+                (error) => {
+                  this.setState({
+                    isLoaded: true,
+                    error
+                  });
+                }
+              )
+        }
 
-    render () {
+        render () {
 
 
         const { error, isLoaded, items} = this.state;
+
+
         if (error) {
             return <div>Error: {error.message}</div>
         } else if (!isLoaded) {
@@ -60,8 +60,9 @@ class ListOfExpenses extends React.Component {
                 <h1 className="postHeading">Expenses</h1>
                 <div className="postBackground"><span className="chart">
                 {items.map(expense => (
-                 <BarChart key={expense._id} expense={expense} />
-               ))}</span>
+                 <BarChart key={expense._id} expense={expense.expense} cost={expense.expenseCost}/>
+               ))}
+            </span>
                     <ul>
                         {items.map(expense => (
                          < SingleExpense key={expense._id} expense={expense} />
@@ -75,4 +76,5 @@ class ListOfExpenses extends React.Component {
     }
 
 }
+
 export default ListOfExpenses;

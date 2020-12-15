@@ -1,36 +1,28 @@
 import React, { Component } from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
+import Chart from 'chart.js';
 
-class BarChart extends Component {
- constructor(props) {
-   super(props);
+function BarChart(props) {
+console.log(props.expense)
+return(
+<div>
 
-   this.state = this.props;
-
-
-
-
- console.log(this.state)
-}
-  render() {
-
-
-  return (<div className="mx-auto">
-  <Pie
+  <Bar
   data={{
-    labels:['Red',
-    'Yellow',
-    'Blue'],
+    labels:props.expense,
     datasets: [{
-      label: '',
-   data: [10, 20, 30],
-   backgroundColor:[]
+      label: 'Monthly Expenses',
+   data:props.cost,
+   backgroundColor:'red'
 }],
 }
-}  />
+
+}
+ />
+
 
 </div>
-);
-}
+)
+
 }
 export default BarChart;
