@@ -8,7 +8,6 @@ import Form from 'react-bootstrap/Form';
 
 function NewExpense(props){
 
-      const [date, setDate] = useState("");
       const [expense, setExpense] = useState("");
       const [cat, setCat] = useState("");
       const [cost, setCost] = useState("");
@@ -27,22 +26,21 @@ function NewExpense(props){
       const handleSubmit = (evt) => {
           console.log("handleSubmit is fired");
           evt.preventDefault();
-          setDate(date);
           setExpense(expense);
           setCat(cat);
           setCost(cost);
-           postExpense(date, expense, cat, cost, props.userId);
+           postExpense(expense, cat, cost, props.userId);
            console.log("expense posted")
            refreshPage();
       }
 
 
-      async function postExpense(date, expense, cat, cost, userid) {
+      async function postExpense(expense, cat, cost, userid) {
           const url = 'http://localhost:3080/expenses'
           await fetch(url, {
             method: 'POST',
             mode: 'cors',
-            body: JSON.stringify({userId: userid, expenseDate: date, expense: expense, expenseCat: cat, expenseCost: cost}),
+            body: JSON.stringify({userId: userid, expense: expense, expenseCat: cat, expenseCost: cost}),
             headers: {'Content-Type': 'application/json'},
            })
           .then(function(resp) { return resp.json() }) // Convert data to json
@@ -69,10 +67,6 @@ function NewExpense(props){
                 <Modal.Body>
                 <div>
                  <Form className="NewExpense-form mx-auto" onSubmit={handleSubmit}>
-                  <Form.Label>
-                    Date:
-                    <Form.Control type="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
-                  </Form.Label><br></br>
                   <Form.Label>
                     Expense:
                     <Form.Control type="text" name="name" value={expense} onChange={e => setExpense(e.target.value)} required/>

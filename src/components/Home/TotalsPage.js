@@ -3,13 +3,14 @@ import TETP from '../Expenses/totalexpensesthisperiod'
 import TSTP from '../Spends/totalspendsthisperiod'
 import TML from './totalMoneyLeft'
 import MLPD from './moneyLeftPerDay'
+import './TotalsPage.css'
 
 function TotalsPage (props) {
 
 
     return (
         <div>
-            <h1>Totals</h1>
+            <h1 className="TotalsPage">Totals</h1>
             <TSTP userId={props.userId}/>
             <TETP userId={props.userId}/>
             <TML userId={props.userId}/>

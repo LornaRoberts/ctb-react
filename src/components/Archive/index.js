@@ -45,7 +45,7 @@ function Archive() {
 
   return (
     <div className="App">
-    {items.map((item) => (<MonthModal key={items.indexOf(item)} monthNo={items.indexOf(item) + 1} input={item}/>))}
+    {items.map((item) => (<MonthModal key={items.indexOf(item)} monthNo={items.indexOf(item) + 1} input={item} />))}
     </div>
   );
 } else {
