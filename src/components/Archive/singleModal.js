@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import BarChart from './barChart';
 
 function SingleModal (props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
   if (props.total) {
+    console.log(props.item[0][0]);
     return (
         <main>
         <Button className="EditButton-icon" onClick={handleShow}>
@@ -21,7 +23,9 @@ function SingleModal (props) {
           </Modal.Header>
           <Modal.Body>
           <div>
-          {props.total}
+          <BarChart cost={props.item[0][0].itemCost} expense={props.item[0][0].itemSpent} />
+
+          Total Spend: {props.total}
           </div>
           </Modal.Body>
           <Modal.Footer>
