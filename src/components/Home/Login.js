@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import './login.css';
+import Form from 'react-bootstrap/Form';
+
 
 function Login () {
     const [email, setEmail] = useState("");
@@ -42,7 +45,7 @@ function Login () {
                 window.localStorage.setItem('userObj', data);
                 refreshPage();
               }
-            
+
           })
           .catch(function(error) {
           });
@@ -50,38 +53,38 @@ function Login () {
 
         if (userObj) {
             return <div className='loggedIn'>{email} is logged in </div>
-          }    
+          }
 
     return (
         <main className="Login">
-        <Button variant="primary" onClick={handleShow}>
+        <Button variant="primary" className="shadow p-3 mb-5 mx-auto" size="lg" onClick={handleShow}>
           Log In
         </Button>
 
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header>
-            <Modal.Title>Log In</Modal.Title>
+          <Modal.Header className="Login-header">
+            <Modal.Title className="Login-title mx-auto">Log In</Modal.Title>
           </Modal.Header>
           <Modal.Body>
           <div>
 
-          <h1>Enter your details</h1>
-           <form className="Login-form" onSubmit={handleSubmit}>
-            <label>
+          <h1 className="Login-enter">Enter your details</h1>
+           <Form className="Login-form" onSubmit={handleSubmit}>
+            <Form.Label>
               Email:
-              <input type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
-            </label><br></br>
-            <label>
+              <Form.Control type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
+            </Form.Label><br></br>
+            <Form.Label>
               Password:
-              <input type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} required/>
-            </label>
+              <Form.Control type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} required/>
+            </Form.Label>
             <br></br>
-            <input type="submit" value="Submit"/>
-          </form>
+            <Button type="submit" value="Submit" className="shadow p-3 mb-5"/>
+          </Form>
           </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary"  onClick={handleClose}>
               What am I doing, I don't even have a login?!
             </Button>
           </Modal.Footer>
