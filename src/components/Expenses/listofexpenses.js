@@ -25,13 +25,9 @@ class ListOfExpenses extends React.Component {
             (result) => {
               this.setState({
                 isLoaded: true,
-                items: result.expense.sort((a, b) => {
-                  if (a.expenseDate > b.expenseDate) return -1;
-                  if (a.expenseDate < b.expenseDate) return 1;
-                  return 0;
+                items: result.expense
                 })
-              });
-              return result.expense;
+                return result  
             },
             (error) => {
               this.setState({
