@@ -22,7 +22,7 @@ function MonthModal (props) {
   .reduce((a, b) => a + b, 0);
     return (
         <div>
-        <SingleModal total={totals} name={monthNames[props.monthNo]} />
+        <SingleModal total={totals} name={monthNames[props.monthNo]} item={props.input} monthNo={props.monthNo}/>
         </div>
     )
   } else {

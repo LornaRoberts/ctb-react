@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+import BarChart from './barChart';
 
 function SingleModal (props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
+
   if (props.total) {
     return (
         <main>
@@ -21,7 +23,8 @@ function SingleModal (props) {
           </Modal.Header>
           <Modal.Body>
           <div>
-          {props.total}
+          <BarChart items={props.item} monthNo={props.monthNo}/>
+          Total Spend: £{props.total.toFixed(2)}
           </div>
           </Modal.Body>
           <Modal.Footer>
@@ -34,7 +37,7 @@ function SingleModal (props) {
     )
   } else {
     return (
-      <div>empty</div>
+      <div></div>
     )
   }
 }
