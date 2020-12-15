@@ -90,6 +90,7 @@ function NewSpend(props){
                         <option value="Sports">Sports</option>
                         <option value="Food & Drink">Food/Drink</option>
                         <option value="Health & Beauty">Health & Beauty</option>
+                        <option value="Transport">Transport</option>
                         <option value="Other">Other</option>
                       </select>
                   </Form.Label>
