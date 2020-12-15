@@ -31,9 +31,7 @@ function SignUp () {
         setPassword2(password2);
             if (password === password2 && window.sessionStorage.getItem('status') === "available") {
                 await postUser(email, password);
-                await setupId(email);
                 await setupSalary(window.sessionStorage.getItem('user'));
-                window.sessionStorage.clear()
                 console.log("user created")
                 refreshPage();
                 window.sessionStorage.clear();
@@ -54,6 +52,7 @@ function SignUp () {
          })
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
+          window.sessionStorage.setItem('user', data.user._id);
           console.log('Success', data);
         })
         .catch(function(error) {
@@ -76,21 +75,6 @@ function SignUp () {
           });
         }
 
-        async function setupId(email) {
-            const url = `http://localhost:3080/users/idbyemail/${email}`
-            await fetch(url, {
-              method: 'GET',
-              mode: 'cors',
-              headers: {'Content-Type': 'application/json'},
-             })
-            .then(function(resp) { return resp.json() }) // Convert data to json
-            .then( function(data) {
-              window.sessionStorage.setItem('user', data.userId);
-              console.log('userId', data);
-            })
-            .catch(function(error) {
-            });
-          }
           async function setupSalary(userId) {
             const url1 = `http://localhost:3080/totals/salary/${userId}`
             await fetch(url1, {
