@@ -101,6 +101,7 @@ function EditButton (singleExpense) {
                     <Form.Label>
                       Category:
                         <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
+                        <option value="" disabled selected> Select a category </option>
                         <option value="Rent/Mortgage">Rent/Mortgage</option>
                         <option value="Electricity">Electricity</option>
                         <option value="Gas">Gas</option>
