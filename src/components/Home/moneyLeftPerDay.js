@@ -53,8 +53,10 @@ function MLPD(props){
 
 
   return (
-
+    <div>
+    <h1 className="TML">Days left this month: <span id="tetp-value">{days}</span></h1>
     <h1 className="TML" id="tetp">Money left per day: £<span id="tetp-value">{((salary - spends - parseFloat(expenses)) / days).toFixed(2)}</span></h1>
+    </div>
 
   );
 }
