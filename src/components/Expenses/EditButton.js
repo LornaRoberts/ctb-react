@@ -10,7 +10,6 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 function EditButton (singleExpense) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [date, setDate] = useState(singleExpense.expense.expenseDate);
   const [expense, setExpense] = useState(singleExpense.expense.expense);
   const [cat, setCat] = useState(singleExpense.expense.expenseCat);
   const [cost, setCost] = useState(singleExpense.expense.expenseCost);
@@ -25,11 +24,10 @@ function EditButton (singleExpense) {
   const handleSubmit = (evt) => {
       console.log("handleSubmit is fired");
       evt.preventDefault();
-      setDate(date);
       setExpense(expense);
       setCat(cat);
       setCost(cost);
-       postExpense(singleExpense.expense._id, date, expense, cat, cost);
+       postExpense(singleExpense.expense._id, expense, cat, cost);
        console.log("expense posted");
        refreshPage();
   }
@@ -65,12 +63,12 @@ function EditButton (singleExpense) {
     });
   }
 
-  async function postExpense(expenseId, date, expense, cat, cost){
+  async function postExpense(expenseId, expense, cat, cost){
       const url = 'http://localhost:3080/expenses/' + expenseId;
       await fetch(url, {
         method: 'PATCH',
         mode: 'cors',
-        body: JSON.stringify({expenseDate: date, expense: expense, expenseCat: cat, expenseCost: cost}),
+        body: JSON.stringify({expense: expense, expenseCat: cat, expenseCost: cost}),
         headers: {'Content-Type': 'application/json'},
        })
       .then(function(resp) { return resp.json() }) // Convert data to json
@@ -95,10 +93,6 @@ function EditButton (singleExpense) {
                   <Modal.Body>
                   <div>
                    <Form className="EditButton-form" onSubmit={handleSubmit}>
-                    <Form.Label>
-                      Date:
-                      <Form.Control type="date" name="date" value={date.substring(0,10)} onChange={e => setDate(e.target.value)} required/>
-                    </Form.Label><br></br>
                     <Form.Label>
                       Expense:
                       <Form.Control type="text" name="name" value={expense} onChange={e => setExpense(e.target.value)} required/>

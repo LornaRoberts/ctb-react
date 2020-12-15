@@ -15,10 +15,6 @@ class SingleExpense extends Component {
     <tbody className="SingleExpense">
           <tr>
           <td className="SingleExpense-row">
-                    {" "}{(this.props.expense.expenseDate.split("T")[0]).slice(-2)}/
-                    {(this.props.expense.expenseDate.split("T")[0]).slice(-5, -3)}/
-                    {(this.props.expense.expenseDate.split("T")[0]).slice(0, 4)}{" "}
-                    </td>
                     <td className="SingleExpense-row">
                     {this.props.expense.expense}{" "}
                     </td >
@@ -30,6 +26,7 @@ class SingleExpense extends Component {
                     </td>
                     <td>
                     <EditButton expense={this.props.expense} />
+                    </td>
                     </td>
                   </tr>
                   </tbody>
