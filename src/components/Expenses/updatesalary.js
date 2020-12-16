@@ -8,6 +8,8 @@ import Form from 'react-bootstrap/Form';
 
 function UpdateSalary(props){
 
+      const { REACT_APP_BACKENDURL } = process.env;
+
       const [salary, setSalary] = useState();
       const [show, setShow] = useState(false);
 
@@ -33,7 +35,7 @@ function UpdateSalary(props){
 
 
       async function update(salary, userid) {
-          const url = `http://localhost:3080/totals/salary/${userid}`
+          const url = `${REACT_APP_BACKENDURL}/totals/salary/${userid}`
           await fetch(url, {
             method: 'PATCH',
             mode: 'cors',
@@ -50,7 +52,7 @@ function UpdateSalary(props){
         };
 
         async function getSalary(userid) {
-            const url = `http://localhost:3080/totals/salary/${userid}`
+            const url = `${REACT_APP_BACKENDURL}/totals/salary/${userid}`
             await fetch(url, {
               method: 'GET',
               mode: 'cors',

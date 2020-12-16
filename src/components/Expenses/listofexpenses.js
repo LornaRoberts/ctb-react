@@ -19,7 +19,9 @@ class ListOfExpenses extends React.Component {
 
     componentDidMount() {
 
-          fetch(`http://localhost:3080/expenses/user/${this.props.userId}`, {mode: 'cors', method: 'GET'})
+        const { REACT_APP_BACKENDURL } = process.env;
+
+          fetch(`${REACT_APP_BACKENDURL}/expenses/user/${this.props.userId}`, {mode: 'cors', method: 'GET'})
           .then(res => res.json())
           .then(
             (result) => {

@@ -6,9 +6,10 @@ import './totalexpensesthisperiod.css';
 
 function TETP(props){
 
+  const { REACT_APP_BACKENDURL } = process.env;
   const [total, setTotal] = useState('');
   useEffect(()=>{
-        const url = 'http://localhost:3080/expenses/total/' + props.userId
+        const url = `${REACT_APP_BACKENDURL}/expenses/total/` + props.userId
          fetch(url, {
           method: 'GET',
           mode: 'cors',

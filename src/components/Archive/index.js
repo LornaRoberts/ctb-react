@@ -4,6 +4,7 @@ import './index.css'
 
 function Archive() {
 
+  const { REACT_APP_BACKENDURL } = process.env;
   const [userObj, setUserObj] = useState();
   const [userID, setUserID] = useState();
   const [items, setItems] = useState([]);
@@ -22,7 +23,7 @@ function Archive() {
         setUserObj(retrievedObject);
 
       }
-      fetch(`http://localhost:3080/spends/user/${userID}`, {mode: 'cors', method: 'GET'})
+      fetch(`${REACT_APP_BACKENDURL}/spends/user/${userID}`, {mode: 'cors', method: 'GET'})
       .then(res => res.json())
       .then( (result) => {
           if (result) {

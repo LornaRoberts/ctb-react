@@ -11,6 +11,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 
 function EditButton (singleSpend) {
+  const { REACT_APP_BACKENDURL } = process.env;
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [date, setDate] = useState(singleSpend.spend.dateSpent);
@@ -51,7 +52,7 @@ function EditButton (singleSpend) {
           label: 'Yes',
           onClick: () => {
             //run the delete API fetch here
-            fetch(`http://localhost:3080/spends/${singleSpend.spend._id}`, {mode: 'cors', method: 'DELETE'})
+            fetch(`${REACT_APP_BACKENDURL}/spends/${singleSpend.spend._id}`, {mode: 'cors', method: 'DELETE'})
             .then(res => res.json())
             .then(() => {
                 alert('Spend deleted');
@@ -70,7 +71,7 @@ function EditButton (singleSpend) {
   }
 
   async function postSpend(spendId, date, spend, cat, cost){
-      const url = 'http://localhost:3080/spends/' + spendId;
+      const url = `${REACT_APP_BACKENDURL}/spends/` + spendId;
       await fetch(url, {
         method: 'PATCH',
         mode: 'cors',

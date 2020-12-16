@@ -19,7 +19,9 @@ class ListOfSpends extends React.Component {
 
     componentDidMount() {
 
-          fetch(`http://localhost:3080/spends/user_filter/${this.props.userId}`, {mode: 'cors', method: 'GET'})
+      const { REACT_APP_BACKENDURL } = process.env;
+
+          fetch(`${REACT_APP_BACKENDURL}/spends/user_filter/${this.props.userId}`, {mode: 'cors', method: 'GET'})
           .then(res => res.json())
           .then(
             (result) => {

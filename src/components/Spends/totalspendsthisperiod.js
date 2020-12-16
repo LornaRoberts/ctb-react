@@ -5,9 +5,10 @@ import './totalspendsthisperiod.css';
 
 function TSTP(props){
   const [total, setTotal] = useState('');
+  const { REACT_APP_BACKENDURL } = process.env;
   useEffect(()=>{
       
-        const url = 'http://localhost:3080/totals/' + props.userId;
+        const url = `${REACT_APP_BACKENDURL}/totals/` + props.userId;
          fetch(url, {
           method: 'GET',
           mode: 'cors',
