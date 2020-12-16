@@ -24,18 +24,20 @@ function Expenses() {
 
   if (!userObj) {
     return (
-      
-        <div className="Notice"> 
+
+        <div className="Notice">
           <p>You need to be signed in.</p>
         </div>
     )
 } else {
 
   return (
-    <div className="App">
+    <div>
     <Tetp userId={userID} />
-    <UpdateSalary userId={userID} />
+    <div className="Buttons">
+    <span className="updateSalary"><UpdateSalary userId={userID}/></span>
      <NewExpense userId={userID} />
+     </div>
       <ListOfExpenses userId={userID} />
     </div>
   );
