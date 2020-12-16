@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
 import TotalsPage from './TotalsPage';
-import Logo from "../../images/budget_buddy.png";
+import Logo from "../../images/boostlogodesign.png";
 import './index.css'
 
 
@@ -18,8 +18,8 @@ function Home () {
             setUserObj(retrievedObject);
 
         }
-    }, [])    
-    
+    }, [])
+
     if (userObj) {
         return (
             <div>
@@ -34,7 +34,7 @@ function Home () {
             </div>
         )
     }
-    
+
 }
 
 export default Home;

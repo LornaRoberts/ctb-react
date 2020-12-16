@@ -1,7 +1,7 @@
 @media only screen and (min-width : 300px) {
     .LargeLogo{
       width:15em;
-      margin-top: 3.5em;
+      margin-top: 2em;
       margin-bottom: -2.25em;
     }
   }
@@ -12,13 +12,13 @@
         margin-bottom: -2em;
     }
   }
-  
+
   @media only screen and (min-width : 768px) {
     .LargeLogo{
       width: 17em;
       margin-top: 2em;
       margin-bottom: -2em;
-  
+
     }
   }
     @media only screen and (min-width : 1440px) {
@@ -27,7 +27,7 @@
         margin-bottom: -2.5em;
       }
   }
-  
+
   @media only screen and (min-width : 2560px) {
     .LargeLogo{
         width: 17em

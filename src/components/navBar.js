@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Logo from "../images/budget_buddy.png";
+import Logo from "../images/boostlogodesign.png";
 import "./navBar.css";
 
 import LogOut from './Home/LogOut';
