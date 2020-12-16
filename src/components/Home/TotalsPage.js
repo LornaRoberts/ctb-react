@@ -10,11 +10,13 @@ function TotalsPage (props) {
 
     return (
         <div>
-            <h1 className="TotalsPage">Totals</h1>
+            
+        <div className="TotalsPageBox">
             <TSTP userId={props.userId}/>
             <TETP userId={props.userId}/>
             <TML userId={props.userId}/>
             <MLPD userId={props.userId}/>
+        </div>
         </div>
     )
 }

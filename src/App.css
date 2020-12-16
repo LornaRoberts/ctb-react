@@ -13,6 +13,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
+}
+
+@media only screen and (min-width : 350px) {
+  .App-header{
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width : 300px) {
+  .App-header{
+    padding: 10px;
+  }
 }
 
 .App-link {
