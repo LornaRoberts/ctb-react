@@ -17,7 +17,6 @@ function TETP(props){
          })
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
-          console.log('Success', data);
           setTotal(data.totalExpenseThisPeriod)
 
         })
