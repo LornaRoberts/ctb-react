@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Login from './Login';
 import SignUp from './SignUp';
 import TotalsPage from './TotalsPage';
-import Logo from "../../images/budget_buddy.png";
-import './index.css'
-
 
 function Home () {
 
@@ -18,8 +15,8 @@ function Home () {
             setUserObj(retrievedObject);
 
         }
-    }, [])    
-    
+    }, [])
+
     if (userObj) {
         return (
             <div>
@@ -29,12 +26,11 @@ function Home () {
     } else {
         return (
             <div>
-            <img src={Logo} alt="Budget Whisperer logo" className="LargeLogo"/>
-            <div className="Buttons" > <SignUp className="SignUp"/> <Login className="Login"/> </div>
+            <SignUp /> or <Login />
             </div>
         )
     }
-    
+
 }
 
 export default Home;
