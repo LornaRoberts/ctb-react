@@ -71,7 +71,7 @@ function NewSpend(props){
 
                  <Form className="NewSpend-form" onSubmit={handleSubmit}>
                  <Form.Group controlId="formNewSpend">
-            
+
                   <Form.Label>
                     Date:
                     <Form.Control type="date" name="date" value={date} min={minDate.toISOString().split("T")[0]} max={maxDate.toISOString().split("T")[0]} onChange={e => setDate(e.target.value)} required/>
@@ -84,9 +84,13 @@ function NewSpend(props){
                   <Form.Label>
                     Category:
                       <select id="categories" name="categories" value={cat} onChange={e => setCat(e.target.value)} required>
+                        <option value="" disabled selected> Select a category </option>
+                        <option value="Leisure">Leisure</option>
                         <option value="Entertainment">Entertainment</option>
                         <option value="Sports">Sports</option>
                         <option value="Food & Drink">Food/Drink</option>
+                        <option value="Health & Beauty">Health & Beauty</option>
+                        <option value="Transport">Transport</option>
                         <option value="Other">Other</option>
                       </select>
                   </Form.Label>

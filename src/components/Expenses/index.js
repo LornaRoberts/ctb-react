@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import ListOfExpenses from './listofexpenses';
 import NewExpense from './new';
 import Tetp from './totalexpensesthisperiod';
+
 import './index.css'
+
+import UpdateSalary from './updatesalary';
+
 
 function Expenses() {
 
@@ -16,10 +20,11 @@ function Expenses() {
         setUserObj(retrievedObject);
 
       }
-  }, [])    
+  }, [])
 
   if (!userObj) {
     return (
+      
         <div className="Notice"> 
           <p>You need to be signed in.</p>
         </div>
@@ -29,6 +34,7 @@ function Expenses() {
   return (
     <div className="App">
     <Tetp userId={userID} />
+    <UpdateSalary userId={userID} />
      <NewExpense userId={userID} />
       <ListOfExpenses userId={userID} />
     </div>

@@ -4,20 +4,20 @@ import Chart from 'chart.js';
 
 function BarChart(props) {
   if (props.items){
-    console.log(props.items)
-  //  props.items[props.monthNo][0].itemCost); //props.items[0][props.monthNo])
-  let spendData = props.items[0].map((item) => item.itemCost)
-    console.log('This is the mapped data', spendData);
-    let spendLabel = props.items[0].map((item) => item.itemSpent)
-      console.log('This is the mapped data', spendLabel);
+ 
+  let spendsByCategory = {};
+
+  props.items[0].map((item) => spendsByCategory[item.itemCat] = 0);
+  props.items[0].map((item) => spendsByCategory[item.itemCat] = (spendsByCategory[item.itemCat] + parseFloat(item.itemCost)) );
+
 return(
 <div>
   <Bar
   data={{
-    labels:spendLabel,
+    labels: Object.keys(spendsByCategory), 
     datasets: [{
       label: 'Monthly Spends',
-   data:spendData,
+   data: Object.values(spendsByCategory),
    backgroundColor:'red'
 }],
 }
