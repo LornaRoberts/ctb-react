@@ -4,7 +4,7 @@ import Chart from 'chart.js';
 
 function BarChart(props) {
   if (props.items){
- 
+
   let spendsByCategory = {};
 
   props.items[0].map((item) => spendsByCategory[item.itemCat] = 0);
@@ -14,7 +14,7 @@ return(
 <div>
   <Bar
   data={{
-    labels: Object.keys(spendsByCategory), 
+    labels: Object.keys(spendsByCategory),
     datasets: [{
       label: 'Monthly Spends',
    data: Object.values(spendsByCategory),
@@ -22,6 +22,20 @@ return(
 }],
 }
 }
+options={{
+     legend: {
+       display: false
+     },
+     scales: {
+       yAxes: [{
+         ticks: {
+            min: 0,
+            stepSize: 5
+          }
+        }]
+       }
+   }}
+
  />
 </div>
 )
