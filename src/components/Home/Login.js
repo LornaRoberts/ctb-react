@@ -41,7 +41,6 @@ function Login () {
                   alert(data);
                   return;
               } else {
-                console.log('User Logged In', data.status);
                 setUserObj(data);
                 window.localStorage.setItem('userObj', data);
                 refreshPage();

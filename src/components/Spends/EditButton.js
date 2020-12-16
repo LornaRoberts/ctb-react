@@ -21,21 +21,17 @@ function EditButton (singleSpend) {
   const [show, setShow] = useState(false);
 
 
-  console.log(singleSpend.spend);
-
   function refreshPage() {
    window.location.reload(false);
  }
 
   const handleSubmit = (evt) => {
-      console.log("handleSubmit is fired");
       evt.preventDefault();
       setDate(date);
       setSpend(spend);
       setCat(cat);
       setCost(cost);
        postSpend(singleSpend.spend._id, date, spend, cat, cost);
-       console.log("spend posted");
        refreshPage();
   }
 
@@ -80,7 +76,6 @@ function EditButton (singleSpend) {
        })
       .then(function(resp) { return resp.json() }) // Convert data to json
       .then(function(data) {
-        console.log('Success', data);
       })
       .catch(function(error) {
       });
