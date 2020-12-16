@@ -33,7 +33,7 @@ function UpdateSalary(props){
 
 
       async function update(salary, userid) {
-          const url = `http://localhost:3080/totals/salary/${userid}`
+          const url = `${REACT_APP_BACKENDURL}/totals/salary/${userid}`
           await fetch(url, {
             method: 'PATCH',
             mode: 'cors',
@@ -48,7 +48,7 @@ function UpdateSalary(props){
         };
 
         async function getSalary(userid) {
-            const url = `http://localhost:3080/totals/salary/${userid}`
+            const url = `${REACT_APP_BACKENDURL}/totals/salary/${userid}`
             await fetch(url, {
               method: 'GET',
               mode: 'cors',
