@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 
 
 function SignUp () {
+    const { REACT_APP_BACKENDURL } = process.env;
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
@@ -43,7 +44,7 @@ function SignUp () {
 
 
     async function postUser(email, password) {
-        const url = 'http://localhost:3080/users/new'
+        const url = `${REACT_APP_BACKENDURL}/users/new`
         await fetch(url, {
           method: 'POST',
           mode: 'cors',
@@ -60,7 +61,7 @@ function SignUp () {
         }
 
         async function checkEmail(email) {
-          const url = 'http://localhost:3080/users/exist';
+          const url = `${REACT_APP_BACKENDURL}/users/exist`;
           await fetch(url, {
             method: 'POST',
             mode: 'cors',
@@ -76,7 +77,7 @@ function SignUp () {
         }
 
           async function setupSalary(userId) {
-            const url1 = `http://localhost:3080/totals/salary/${userId}`
+            const url1 = `${REACT_APP_BACKENDURL}/totals/salary/${userId}`
             await fetch(url1, {
               method: 'POST',
               mode: 'cors',
@@ -93,7 +94,7 @@ function SignUp () {
 
     return (
         <main className="SignUp">
-        <Button variant="primary" className="shadow p-3 mb-5 mx-auto" size="lg" onClick={handleShow}>
+        <Button variant="primary" className="shadow p-3 mb-5 mx-auto" onClick={handleShow}>
           Sign Up
         </Button>
 

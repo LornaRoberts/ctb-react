@@ -18,6 +18,11 @@ Table {
   text-align: left;
 }
 
+.EditButton{
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
 td {
   text-align: left;
 }

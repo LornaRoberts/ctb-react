@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 
 
 function Login () {
+  const { REACT_APP_BACKENDURL } = process.env;
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [userObj, setUserObj] = useState();
@@ -28,7 +29,7 @@ function Login () {
     }
 
         async function checkLogin(email, password) {
-          const url = 'http://localhost:3080/users/login';
+          const url = `${REACT_APP_BACKENDURL}/users/login`;
           await fetch(url, {
             method: 'POST',
             mode: 'cors',
@@ -79,13 +80,13 @@ function Login () {
               <Form.Control type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} required/>
             </Form.Label>
             <br></br>
-            <Button type="submit" value="Submit" className="shadow p-3 mb-5"/>
+            <Button type="submit" value="Submit" className="shadow p-3 mb-5">Login</Button>
           </Form>
           </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary"  onClick={handleClose}>
-              What am I doing, I don't even have a login?!
+              Close
             </Button>
           </Modal.Footer>
         </Modal>

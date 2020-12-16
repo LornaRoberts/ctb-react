@@ -6,11 +6,12 @@ import './moneyleft.css';
 
 function TML(props){
 
+  const { REACT_APP_BACKENDURL } = process.env;
   const [salary, setSalary] = useState('');
   const [expenses, setExpenses] = useState('');
   const [spends, setSpends] = useState('');
   useEffect(()=>{
-        const url = 'http://localhost:3080/totals/' + props.userId
+        const url = `${REACT_APP_BACKENDURL}/totals/` + props.userId
          fetch(url, {
           method: 'GET',
           mode: 'cors',
@@ -25,7 +26,7 @@ function TML(props){
         .catch(function(error) {
         });
 
-        const url1 = 'http://localhost:3080/expenses/total/' + props.userId
+        const url1 = `${REACT_APP_BACKENDURL}/expenses/total/` + props.userId
          fetch(url1, {
           method: 'GET',
           mode: 'cors',

@@ -9,10 +9,11 @@ function SingleModal (props) {
   const handleShow = () => setShow(true);
   const [show, setShow] = useState(false);
 
+
   if (props.total) {
     return (
         <main>
-        <Button className="EditButton-icon" onClick={handleShow}>
+        <Button className="EditButton-icon shadow p-3 mb-5 mx-auto" onClick={handleShow}>
         {props.name}
         </Button>
         <Modal show={show} onHide={handleClose}>

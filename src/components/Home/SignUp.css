@@ -3,6 +3,7 @@
     color: #fcd603;
     border: #732bf0;
     box-shadow: 5px 10px black;
+    width: 5em;
 
 }
 
@@ -50,7 +51,7 @@
 }
   @media only screen and (min-width : 1440px) {
     .btn-primary{
-     font-size: 1.5em;
+     font-size: 0.8em;
     }
 }
 
