@@ -1,0 +1,58 @@
+/* Add a black background color to the top navigation */
+.title {
+  background-color:  #fcd603;
+  overflow: hidden;
+  color: black !important;
+  margin-right: 2em;
+  font-size: 1em;
+  width: 100%;
+}
+
+/* Style the links inside the navigation bar */
+.title a {
+  display: block;
+  color: black!important;
+  padding: 0.75em 0.75em;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.title a:hover {
+  border-bottom: 3px solid #732bf0 ;
+}
+
+.title a.active {
+  border-bottom: 3px solid #732bf0 ;
+}
+
+
+
+
+@media only screen and (min-width : 768px) {
+  .title a{
+    margin-left: 0.4em;
+    font-size: 0.7em;
+    margin-right: 0.4em;
+
+
+
+  }
+}
+  @media only screen and (min-width : 1440px) {
+    .title a{
+      margin-left: 1em;
+      margin-right: 1em;
+      font-size: 0.7em;
+    }
+}
+@media only screen and (min-width : 2000px) {
+  .title a{
+    margin-left: 1em;
+    margin-right: 1em;
+    font-size: 0.8em;
+  }
+}
+
+#basic-navbar-nav:hover, #basic-navbar-nav:active{
+  cursor: pointer;
+}

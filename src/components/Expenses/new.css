@@ -1,0 +1,55 @@
+.NewExpense {
+  padding: 20px;
+}
+
+
+.NewExpense-form{
+  border: 3px solid white;
+  padding: 50px;
+  text-align: center;
+}
+
+.btn-primary,.btn-primary:visited {
+    background-color: #732bf0;
+    color: white!important;
+    border: #732bf0;
+    box-shadow: 5px 10px black;
+    text-align: center;
+    font-size: 1em !important;
+    width: 9em !important;
+}
+
+
+.NewExpense-title{
+  text-align: center;
+  background-color: #732bf0;
+
+}
+
+.NewExpense-header{
+  background-color: #732bf0;
+  color: #fcd603;
+  text-align: center;
+
+}
+
+.NewExpense-submit{
+  width: 6em !important;
+  text-align: center;
+  color: white;
+
+}
+
+.NewExpense-submit a:hover{
+  width: 3em !important;
+}
+
+.btn-primary:hover,  .btn-primary:active, .btn-primary.active {
+  background-color: #51069c !important;
+  text-align: center;
+
+}
+
+.NewExpense-add{
+  font-size: 0.5em;
+}
