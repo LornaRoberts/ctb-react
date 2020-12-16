@@ -1,6 +1,6 @@
 .TETP{
   margin-top: 2em;
-  color: #732bf0 !important;
+  color: #732bf0;
 }
 @media only screen and (min-width : 300px) {
   .TETP{

@@ -8,14 +8,14 @@ class SingleExpense extends Component {
 
     render () {
         return (
-          <div>
+          <div className="SingleExpense mx-auto">
           <Table>
 
 
-    <tbody className="SingleExpense">
+    <tbody className="SingleExpense-body">
           <tr>
           <td className="SingleExpense-row">
-                    <td className="SingleExpense-row">
+                    <td className="SingleExpense-row" >
                     {this.props.expense.expense}{" "}
                     </td >
                     <td className="SingleExpense-row">
