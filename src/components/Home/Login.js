@@ -79,13 +79,13 @@ function Login () {
               <Form.Control type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} required/>
             </Form.Label>
             <br></br>
-            <Button type="submit" value="Submit" className="shadow p-3 mb-5"/>
+            <Button type="submit" value="Submit" className="shadow p-3 mb-5">Login</Button>
           </Form>
           </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary"  onClick={handleClose}>
-              What am I doing, I don't even have a login?!
+              Close
             </Button>
           </Modal.Footer>
         </Modal>

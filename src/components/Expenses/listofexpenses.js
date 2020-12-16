@@ -50,7 +50,7 @@ class ListOfExpenses extends React.Component {
                 <div className="main">
                 <h1 className="postHeading">Expenses</h1>
                 <div className="postBackground">
-                    <ul>
+                    <ul className="Expenses">
                         {items.map(expense => (
                          < SingleExpense key={expense._id} expense={expense} />
                         ))}
