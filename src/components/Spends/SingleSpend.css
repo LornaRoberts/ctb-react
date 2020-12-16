@@ -1,0 +1,23 @@
+Table {
+  table-layout: fixed;
+  margin:0 auto;
+  width: 100%;
+  border: black !important;
+}
+
+.SingleSpend {
+  text-align: center;
+}
+
+.SingleSpend-body {
+  text-align: left !important;
+  color: black;
+}
+
+.SingleSpend-row{
+  text-align: left;
+}
+
+td {
+  text-align: left;
+}

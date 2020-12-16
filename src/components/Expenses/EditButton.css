@@ -1,0 +1,59 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #732bf0 !important;
+    color: #fcd603;
+    border: #732bf0;
+    box-shadow: 5px 10px black;
+    margin-left: 2em;
+}
+
+.EditButton-icon{
+  color: #732bf0;
+  cursor: pointer;
+
+}
+
+
+.delete{
+  background-color: red;
+
+}
+.EditButton-form{
+  text-align: center;
+}
+.EditButton-title{
+  text-align: center;
+  background-color: #732bf0;
+
+}
+
+.EditButton-header{
+  background-color: #732bf0;
+  color: #fcd603;
+
+}
+
+@media only screen and (min-width : 300px) {
+  .EditButton{
+    font-size: 4em!important;
+  }
+}
+@media only screen and (min-width : 350px) {
+  .EditButton-icon{
+    font-size: 1.5em;
+
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .EditButton-icon{
+    font-size: 1.5em;
+
+  }
+}
+  @media only screen and (min-width : 900px) {
+  .EditButton-icon{
+      font-size: 2em;
+
+
+    }
+}

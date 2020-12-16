@@ -1,0 +1,38 @@
+.TETP{
+  margin-top: 2em;
+  color: #732bf0 !important;
+}
+@media only screen and (min-width : 300px) {
+  .TETP{
+    font-size: 1em;
+    margin-top: 10em;
+  }
+}
+@media only screen and (min-width : 350px) {
+  .TETP{
+    font-size: 1.5em;
+    margin-top: 6em;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .TETP{
+    font-size: 2em;
+    margin-top: 4em;
+
+  }
+}
+  @media only screen and (min-width : 1440px) {
+    .TETP{
+      font-size: 2em;
+      margin-top: 3em;
+
+    }
+}
+@media only screen and (min-width : 2000px) {
+  .TETP{
+    font-size: 2em;
+    margin-top: 1em;
+
+  }
+}

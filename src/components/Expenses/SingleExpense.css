@@ -1,0 +1,19 @@
+Table {
+  table-layout: fixed;
+  margin:0 auto;
+  width: 100%;
+  border: black !important;
+}
+
+.SingleExpense {
+  text-align: left !important;
+  color: black;
+}
+
+.SingleExpense-row{
+  text-align: left;
+}
+
+td {
+  text-align: left;
+}

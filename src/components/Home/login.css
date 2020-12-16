@@ -1,0 +1,68 @@
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #732bf0 !important;
+    color: #fcd603;
+    border: #732bf0;
+    box-shadow: 5px 10px black;
+}
+
+Main{
+  margin-top: 2em;
+}
+.submit{
+  background-color: #732bf0 !important;
+  color: #fcd603;
+  width: 6em;
+}
+.Login-form{
+  text-align: center;
+}
+
+.Login-enter {
+  text-align: center;
+}
+
+.shadow {
+  box-shadow: 5px 10px black;
+  margin-right: 2em;
+
+}
+.Login-header{
+  background-color: #732bf0;
+  color: #fcd603;
+
+}
+.btn-primary:hover,  .btn-primary:active, .btn-primary.active {
+  background-color: #521dad !important;
+  color: #fcd603;
+
+}
+
+@media only screen and (min-width : 300px) {
+  .btn-primary{
+    font-size: 1em;
+  }
+}
+@media only screen and (min-width : 350px) {
+  .btn-primary{
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  .btn-primary{
+    width: 100%;
+    font-size: 2em;
+
+  }
+}
+  @media only screen and (min-width : 1440px) {
+    .btn-primary{
+     font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width : 2560px) {
+  .btn-primary{
+   font-size: 2em;
+  }
+}
