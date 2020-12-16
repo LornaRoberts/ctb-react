@@ -29,7 +29,7 @@ function Home () {
     } else {
         return (
             <div>
-            <img src={Logo} alt="Budget Whisperer logo" className="LargeLogo"/>
+            <img src={Logo} alt="Boost logo" className="LargeLogo"/>
             <div className="Buttons" > <SignUp className="SignUp"/> <Login className="Login"/> </div>
             </div>
         )
