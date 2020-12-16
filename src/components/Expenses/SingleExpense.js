@@ -15,16 +15,16 @@ class SingleExpense extends Component {
     <tbody className="SingleExpense-body">
           <tr>
           <td className="SingleExpense-row">
-                    <td className="SingleExpense-row" >
+                    <td className="SingleExpense-td" >
                     {this.props.expense.expense}{" "}
                     </td >
-                    <td className="SingleExpense-row">
+                    <td className="SingleExpense-td">
                     {this.props.expense.expenseCat} {" "}
                     </td>
-                    <td className="SingleExpense-row">
+                    <td className="SingleExpense-td">
                     {'£'}{this.props.expense.expenseCost.toFixed(2)}{" "}
                     </td>
-                    <td>
+                    <td className="EditButton">
                     <EditButton expense={this.props.expense} />
                     </td>
                     </td>

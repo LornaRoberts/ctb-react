@@ -5,3 +5,12 @@
   color: #732bf0;
   font-size: 3em;
 }
+
+.TotalsPageBox{
+  background-color: white;
+  border-radius: 25px;
+  padding: 15px;
+  border: 5px solid #732bf0;
+  text-align: left;
+  font-size: 0.75em;
+}

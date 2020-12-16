@@ -93,7 +93,7 @@ function SignUp () {
 
     return (
         <main className="SignUp">
-        <Button variant="primary" className="shadow p-3 mb-5 mx-auto" size="lg" onClick={handleShow}>
+        <Button variant="primary" className="shadow p-3 mb-5 mx-auto" onClick={handleShow}>
           Sign Up
         </Button>
 
