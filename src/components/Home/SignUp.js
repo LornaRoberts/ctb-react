@@ -12,6 +12,7 @@ function SignUp () {
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [show, setShow] = useState(false);
+    //const [userObj, setUserObj] = useState();
 
     const handleClose = () => {setShow(false);
       window.sessionStorage.clear();}
@@ -35,7 +36,7 @@ function SignUp () {
                 refreshPage();
                 window.sessionStorage.clear();
             }  else {
-              alert('Passwords do not match or the email is inccorect');
+              alert('Passwords do not match or the email is already in use');
               window.sessionStorage.clear();
             }
           }
@@ -52,6 +53,7 @@ function SignUp () {
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
           window.sessionStorage.setItem('user', data.user._id);
+          window.localStorage.setItem('userObj', JSON.stringify(data.user));
         })
         .catch(function(error) {
         });
