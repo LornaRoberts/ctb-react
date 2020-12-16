@@ -30,7 +30,8 @@ function SignUp () {
         setPassword(password);
         setPassword2(password2);
             if (password === password2 && window.sessionStorage.getItem('status') === "available") {
-                postUser(email, password);
+                await postUser(email, password);
+                await setupSalary(window.sessionStorage.getItem('user'));
                 console.log("user created")
                 refreshPage();
                 window.sessionStorage.clear();
@@ -51,6 +52,7 @@ function SignUp () {
          })
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
+          window.sessionStorage.setItem('user', data.user._id);
           console.log('Success', data);
         })
         .catch(function(error) {
@@ -72,6 +74,22 @@ function SignUp () {
           .catch(function(error) {
           });
         }
+
+          async function setupSalary(userId) {
+            const url1 = `http://localhost:3080/totals/salary/${userId}`
+            await fetch(url1, {
+              method: 'POST',
+              mode: 'cors',
+              body: JSON.stringify({salary: 1950}),
+              headers: {'Content-Type': 'application/json'},
+             })
+            .then(function(resp) { return resp.json() }) // Convert data to json
+            .then(function(data) {
+              console.log("salary", data);
+            })
+            .catch(function(error) {
+            });
+            }
 
     return (
         <main className="SignUp">
