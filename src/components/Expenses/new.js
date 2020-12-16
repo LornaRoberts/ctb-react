@@ -8,6 +8,7 @@ import Form from 'react-bootstrap/Form';
 
 function NewExpense(props){
 
+      const { REACT_APP_BACKENDURL } = process.env;
       const [expense, setExpense] = useState("");
       const [cat, setCat] = useState("");
       const [cost, setCost] = useState("");
@@ -36,7 +37,7 @@ function NewExpense(props){
 
 
       async function postExpense(expense, cat, cost, userid) {
-          const url = 'http://localhost:3080/expenses'
+          const url = `${REACT_APP_BACKENDURL}/expenses`
           await fetch(url, {
             method: 'POST',
             mode: 'cors',

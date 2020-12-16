@@ -8,6 +8,7 @@ import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
 function EditButton (singleExpense) {
+  const { REACT_APP_BACKENDURL } = process.env;
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [expense, setExpense] = useState(singleExpense.expense.expense);
@@ -45,7 +46,7 @@ function EditButton (singleExpense) {
           label: 'Yes',
           onClick: () => {
             //run the delete API fetch here
-            fetch(`http://localhost:3080/expenses/${singleExpense.expense._id}`, {mode: 'cors', method: 'DELETE'})
+            fetch(`${REACT_APP_BACKENDURL}/expenses/${singleExpense.expense._id}`, {mode: 'cors', method: 'DELETE'})
             .then(res => res.json())
             .then(() => {
                 alert('Expense deleted');
@@ -64,7 +65,7 @@ function EditButton (singleExpense) {
   }
 
   async function postExpense(expenseId, expense, cat, cost){
-      const url = 'http://localhost:3080/expenses/' + expenseId;
+      const url = `${REACT_APP_BACKENDURL}/expenses/` + expenseId;
       await fetch(url, {
         method: 'PATCH',
         mode: 'cors',
