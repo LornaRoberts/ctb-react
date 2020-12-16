@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ListOfExpenses from './listofexpenses';
 import NewExpense from './new';
 import Tetp from './totalexpensesthisperiod';
+import './index.css'
 
 function Expenses() {
 
@@ -19,7 +20,7 @@ function Expenses() {
 
   if (!userObj) {
     return (
-        <div> 
+        <div className="Notice"> 
           <p>You need to be signed in.</p>
         </div>
     )

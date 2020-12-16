@@ -30,7 +30,7 @@ function Home () {
         return (
             <div>
             <img src={Logo} alt="Budget Whisperer logo" className="LargeLogo"/>
-            <div className="Buttons"> <SignUp className="SignUp"/> <Login className="Login"/> </div>
+            <div className="Buttons" > <SignUp className="SignUp"/> <Login className="Login"/> </div>
             </div>
         )
     }

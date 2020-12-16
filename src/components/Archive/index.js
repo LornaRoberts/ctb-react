@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MonthModal from './MonthModal';
+import './index.css'
 
 function Archive() {
 
@@ -37,7 +38,7 @@ function Archive() {
 
   if (!userObj) {
     return (
-        <div>
+        <div className="Notice">
           <p>You need to be signed in.</p>
         </div>
     )
