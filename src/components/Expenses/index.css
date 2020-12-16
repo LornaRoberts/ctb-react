@@ -1,5 +1,19 @@
 .Notice{
     color: #732bf0 !important;
-    
+
   }
-  
+
+  .Buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+
+
+.App{
+  text-align: center;
+}
+
+.updateSalary{
+  font-size: 0.8em;
+}

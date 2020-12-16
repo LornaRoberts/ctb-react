@@ -28,13 +28,11 @@ function SignUp () {
         window.sessionStorage.clear();
         setEmail(email);
         await checkEmail(email);
-        console.log(sessionStorage.getItem('status'));
         setPassword(password);
         setPassword2(password2);
             if (password === password2 && window.sessionStorage.getItem('status') === "available") {
                 await postUser(email, password);
                 await setupSalary(window.sessionStorage.getItem('user'));
-                console.log("user created")
                 refreshPage();
                 window.sessionStorage.clear();
             }  else {
@@ -55,7 +53,6 @@ function SignUp () {
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
           window.sessionStorage.setItem('user', data.user._id);
-          console.log('Success', data);
           window.localStorage.setItem('userObj', JSON.stringify(data.user));
         })
         .catch(function(error) {
@@ -88,7 +85,6 @@ function SignUp () {
              })
             .then(function(resp) { return resp.json() }) // Convert data to json
             .then(function(data) {
-              console.log("salary", data);
             })
             .catch(function(error) {
             });

@@ -25,13 +25,11 @@ function NewExpense(props){
 
 
       const handleSubmit = (evt) => {
-          console.log("handleSubmit is fired");
           evt.preventDefault();
           setExpense(expense);
           setCat(cat);
           setCost(cost);
            postExpense(expense, cat, cost, props.userId);
-           console.log("expense posted")
            refreshPage();
       }
 
@@ -46,8 +44,6 @@ function NewExpense(props){
            })
           .then(function(resp) { return resp.json() }) // Convert data to json
           .then(function(data) {
-            console.log('Success', data);
-
           })
           .catch(function(error) {
           });

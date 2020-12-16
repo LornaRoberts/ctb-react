@@ -26,7 +26,6 @@ function MLPD(props){
          })
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
-          console.log('Success', data);
           setSalary(data.salary);
           setSpends(data.totalSpendThisPeriod);
         })
@@ -41,7 +40,6 @@ function MLPD(props){
          })
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
-          console.log('Success', data);
           setExpenses(data.totalExpenseThisPeriod);
         })
         .catch(function(error) {
