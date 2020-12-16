@@ -1,0 +1,59 @@
+@media only screen and (min-width : 300px) {
+    .LargeLogo{
+      width:15em;
+      margin-top: 3.5em;
+      margin-bottom: -2.25em;
+    }
+  }
+  @media only screen and (min-width : 350px) {
+    .LargeLogo{
+        width: 15em;
+        margin-top: 3em;
+        margin-bottom: -2em;
+    }
+  }
+  
+  @media only screen and (min-width : 768px) {
+    .LargeLogo{
+      width: 17em;
+      margin-top: 2em;
+      margin-bottom: -2em;
+  
+    }
+  }
+    @media only screen and (min-width : 1440px) {
+      .LargeLogo{
+        width: 17em;
+        margin-bottom: -2.5em;
+      }
+  }
+  
+  @media only screen and (min-width : 2560px) {
+    .LargeLogo{
+        width: 17em
+    }
+  }
+
+  .Buttons{
+      display: flex;
+      flex-direction: row;
+      
+  }
+
+  .SignUp{
+      margin: 15px;
+  }
+
+  .Login{
+    margin: 15px;
+}
+
+@media only screen and (min-width : 300px) {
+    .Login{
+      font-size: 13.5px;
+    }
+
+    .SignUp{
+        font-size: 13.5px;
+    }
+  }
