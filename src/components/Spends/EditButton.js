@@ -84,7 +84,6 @@ function EditButton (singleSpend) {
       const minDate = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
       const maxDate = new Date(new Date().getFullYear(), new Date().getMonth()+1, 0);
 
-
   return(
               <main className="EditButton">
 
@@ -102,7 +101,7 @@ function EditButton (singleSpend) {
                    <Form className="EditButton-form" onSubmit={handleSubmit}>
                     <Form.Label>
                       Date:
-                      <Form.Control type="date" name="date" value={date} min={minDate.toISOString().split("T")[0]} max={maxDate.toISOString().split("T")[0]} onChange={e => setDate(e.target.value)} required/>
+                      <Form.Control type="date" name="date" value={date.split("T")[0]} min={minDate.toISOString().split("T")[0]} max={maxDate.toISOString().split("T")[0]} onChange={e => setDate(e.target.value)}  required/>
                     </Form.Label><br></br>
                     <Form.Label>
                       Item:

@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 function NewSpend(props){
 
       const { REACT_APP_BACKENDURL } = process.env;
-      const [date, setDate] = useState("");
+      const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
       const [spend, setSpend] = useState("");
       const [cat, setCat] = useState("");
       const [cost, setCost] = useState("");
