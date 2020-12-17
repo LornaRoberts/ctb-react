@@ -31,7 +31,7 @@ function TETP(props){
 
   return (
 
-    <h1 className="TETP" id="tetp">The total expenses for this period: £<span id="tetp-value">{total}</span></h1>
+    <h1 className="TETP" id="tetp">The total expenses for this month: £<span id="tetp-value">{total}</span></h1>
 
   );
 }

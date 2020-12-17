@@ -43,7 +43,7 @@ let logoMargin = {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <Nav.Link href="/home" className="Navbar-link">Home</Nav.Link>
-                <Nav.Link href="/expenses" className="Navbar-link">Regular Spends</Nav.Link>
+                <Nav.Link href="/expenses" className="Navbar-link">Regular Expenses</Nav.Link>
                 <Nav.Link href="/spends" className="Navbar-link">Spending Log</Nav.Link>
                 <Nav.Link href="/archive" className="Navbar-link">Archive</Nav.Link>
                 <span className="login">{this.state.loggedIn && <LogOut />}</span>

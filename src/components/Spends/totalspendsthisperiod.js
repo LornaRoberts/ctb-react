@@ -25,7 +25,7 @@ function TSTP(props){
 
   return (
 
-    <h1 className="TSTP" id="tstp">The total spend this period: £<span id="tstp-value">{total}</span></h1>
+    <h1 className="TSTP" id="tstp">The total spend this month: £<span id="tstp-value">{total}</span></h1>
 
   );
 }
