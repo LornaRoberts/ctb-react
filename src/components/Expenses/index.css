@@ -2,4 +2,15 @@
     color: #732bf0 !important;
     
   }
-  
+
+.AppPosition{
+  padding-top: 1em;
+
+}
+
+.Buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
