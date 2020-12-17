@@ -38,7 +38,7 @@ let logoMargin = {
     return (
         <div className="NavBar">
         <Navbar variant="light" style={{backgroundColor: "#fcd603"}} expand="lg" fixed="top" className="title">
-            <Navbar.Brand href="/home"><img src={Logo} alt="Budget Whisperer logo" style={{...logoSize, ...logoMargin}}/></Navbar.Brand>
+            <Navbar.Brand className="Logo" href="/home"><img src={Logo} alt="Budget Whisperer logo" style={{...logoSize, ...logoMargin}} /></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"  className="mx-auto"/>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">

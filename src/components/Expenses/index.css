@@ -3,12 +3,16 @@
 
   }
 
+.AppPosition{
+  padding-top: 1em;
+
+}
+
   .Buttons{
       display: flex;
       flex-direction: row;
       justify-content: center;
   }
-
 
 .App{
   text-align: center;
@@ -17,3 +21,4 @@
 .updateSalary{
   font-size: 0.8em;
 }
+

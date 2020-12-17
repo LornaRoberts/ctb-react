@@ -32,13 +32,11 @@ function Expenses() {
 } else {
 
   return (
-    <div>
-    <Tetp userId={userID} />
-    <div className="Buttons">
-    <span className="updateSalary"><UpdateSalary userId={userID}/></span>
-     <NewExpense userId={userID} />
-     </div>
-      <ListOfExpenses userId={userID} />
+    <div className="AppPosition">
+       <Tetp userId={userID} />
+       <div className="Buttons"><UpdateSalary userId={userID} />
+       <NewExpense userId={userID} /> </div>
+       <ListOfExpenses userId={userID} />
     </div>
   );
   }
