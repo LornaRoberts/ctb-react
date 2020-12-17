@@ -12,6 +12,7 @@ function SignUp () {
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
     const [show, setShow] = useState(false);
+    //const [userObj, setUserObj] = useState();
 
     const handleClose = () => {setShow(false);
       window.sessionStorage.clear();}
@@ -27,17 +28,15 @@ function SignUp () {
         window.sessionStorage.clear();
         setEmail(email);
         await checkEmail(email);
-        console.log(sessionStorage.getItem('status'));
         setPassword(password);
         setPassword2(password2);
             if (password === password2 && window.sessionStorage.getItem('status') === "available") {
                 await postUser(email, password);
                 await setupSalary(window.sessionStorage.getItem('user'));
-                console.log("user created")
                 refreshPage();
                 window.sessionStorage.clear();
             }  else {
-              alert('Passwords do not match or the email is inccorect');
+              alert('Passwords do not match or the email is already in use');
               window.sessionStorage.clear();
             }
           }
@@ -54,7 +53,7 @@ function SignUp () {
         .then(function(resp) { return resp.json() }) // Convert data to json
         .then(function(data) {
           window.sessionStorage.setItem('user', data.user._id);
-          console.log('Success', data);
+          window.localStorage.setItem('userObj', JSON.stringify(data.user));
         })
         .catch(function(error) {
         });
@@ -86,7 +85,6 @@ function SignUp () {
              })
             .then(function(resp) { return resp.json() }) // Convert data to json
             .then(function(data) {
-              console.log("salary", data);
             })
             .catch(function(error) {
             });

@@ -24,8 +24,8 @@ function Expenses() {
 
   if (!userObj) {
     return (
-      
-        <div className="Notice"> 
+
+        <div className="Notice">
           <p>You need to be signed in.</p>
         </div>
     )

@@ -17,21 +17,18 @@ function NewSpend(props){
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
 
-      console.log('userprops:', props.userId);
 
       function refreshPage() {
        window.location.reload(false);
      }
 
       const handleSubmit = (evt) => {
-          console.log("handleSubmit is fired");
           evt.preventDefault();
           setDate(date);
           setSpend(spend);
           setCat(cat);
           setCost(cost);
            postSpend(date, spend, cat, cost, props.userId);
-           console.log("spend posted")
            refreshPage();
       }
 
@@ -45,7 +42,6 @@ function NewSpend(props){
            })
           .then(function(resp) { return resp.json() }) // Convert data to json
           .then(function(data) {
-            console.log('Success', data);
           })
           .catch(function(error) {
           });

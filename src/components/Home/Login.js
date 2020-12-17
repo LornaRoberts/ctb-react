@@ -35,20 +35,24 @@ function Login () {
             mode: 'cors',
             body: JSON.stringify({email: email, password: password}),
             headers: {'Content-Type': 'application/json'},
-          }).then(function(resp) { return resp.text() }) // Convert data to json
-          .then(function(data) {
+          }).then(function(resp) { 
+              return resp.text();  // Convert data to json  
+          }).then(function(data) {
               if (data === "Wrong username or password." || data === "Wrong username or password") {
+                alert(data);
+                return;
+              }
+                if (data._id) {
                   alert(data);
                   return;
               } else {
-                console.log('User Logged In', data.status);
                 setUserObj(data);
                 window.localStorage.setItem('userObj', data);
                 refreshPage();
-              }
-
+                }
           })
           .catch(function(error) {
+            alert(error);
           });
         }
 

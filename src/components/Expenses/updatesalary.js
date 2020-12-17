@@ -9,7 +9,6 @@ import Form from 'react-bootstrap/Form';
 function UpdateSalary(props){
 
       const { REACT_APP_BACKENDURL } = process.env;
-
       const [salary, setSalary] = useState();
       const [show, setShow] = useState(false);
 
@@ -44,8 +43,6 @@ function UpdateSalary(props){
            })
           .then(function(resp) { return resp.json() }) // Convert data to json
           .then(function(data) {
-            console.log('Success', data);
-
           })
           .catch(function(error) {
           });
@@ -61,8 +58,6 @@ function UpdateSalary(props){
             .then(function(resp) { return resp.json() }) // Convert data to json
             .then(function(data) {
               setSalary(data.salary[0].salary);
-              console.log('salary', data.salary[0].salary);
-
             })
             .catch(function(error) {
             });

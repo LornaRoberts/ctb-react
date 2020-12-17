@@ -28,11 +28,12 @@ class NavBarComponent extends React.Component {
 render() {
 
   let logoSize = {
-  width: '5em'
+  width: '12em'
 }
 
 let logoMargin = {
-  marginLeft: '2em'
+  marginLeft: '2em',
+  marginTop: '-2em'
 }
     return (
         <div className="NavBar">
@@ -43,8 +44,8 @@ let logoMargin = {
                 <Nav className="mr-auto">
                 <Nav.Link href="/home" className="Navbar-link">Home</Nav.Link>
                 <Nav.Link href="/expenses" className="Navbar-link">Regular Spends</Nav.Link>
-                <Nav.Link href="/archive" className="Navbar-link">Archive</Nav.Link>
                 <Nav.Link href="/spends" className="Navbar-link">Spending Log</Nav.Link>
+                <Nav.Link href="/archive" className="Navbar-link">Archive</Nav.Link>
                 <span className="login">{this.state.loggedIn && <LogOut />}</span>
 
                 </Nav>
