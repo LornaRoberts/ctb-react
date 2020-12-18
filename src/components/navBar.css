@@ -25,7 +25,9 @@
   border-bottom: 3px solid #732bf0 ;
 }
 
-
+.Logo {
+  transform:scale(1);
+}
 
 
 @media only screen and (min-width : 768px) {

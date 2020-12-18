@@ -16,25 +16,20 @@ function EditButton (singleExpense) {
   const [cost, setCost] = useState(singleExpense.expense.expenseCost);
   const [show, setShow] = useState(false);
 
-  console.log(singleExpense.expense);
-
   function refreshPage() {
    window.location.reload(false);
  }
 
   const handleSubmit = (evt) => {
-      console.log("handleSubmit is fired");
       evt.preventDefault();
       setExpense(expense);
       setCat(cat);
       setCost(cost);
        postExpense(singleExpense.expense._id, expense, cat, cost);
-       console.log("expense posted");
        refreshPage();
   }
 
   const handleDelete = () => {
-    console.log("handleDelete is fired");
     // closes the modal so it doesn't obscure the alert
     handleClose();
 

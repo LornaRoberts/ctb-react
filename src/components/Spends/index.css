@@ -1,11 +1,21 @@
 .Sign-in{
   background-color: #732bf0 !important;
   color: #732bf0
-  
+
 
 }
 
 .Notice{
   color: #732bf0 !important;
-  
+
+}
+
+
+.App{
+  margin-top: 3em;
+}
+
+.App{
+  padding-top: 3em;
+
 }

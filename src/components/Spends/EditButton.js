@@ -21,21 +21,17 @@ function EditButton (singleSpend) {
   const [show, setShow] = useState(false);
 
 
-  console.log(singleSpend.spend);
-
   function refreshPage() {
    window.location.reload(false);
  }
 
   const handleSubmit = (evt) => {
-      console.log("handleSubmit is fired");
       evt.preventDefault();
       setDate(date);
       setSpend(spend);
       setCat(cat);
       setCost(cost);
        postSpend(singleSpend.spend._id, date, spend, cat, cost);
-       console.log("spend posted");
        refreshPage();
   }
 
@@ -80,7 +76,6 @@ function EditButton (singleSpend) {
        })
       .then(function(resp) { return resp.json() }) // Convert data to json
       .then(function(data) {
-        console.log('Success', data);
       })
       .catch(function(error) {
       });
@@ -88,7 +83,6 @@ function EditButton (singleSpend) {
 
       const minDate = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
       const maxDate = new Date(new Date().getFullYear(), new Date().getMonth()+1, 0);
-
 
   return(
               <main className="EditButton">
@@ -107,7 +101,7 @@ function EditButton (singleSpend) {
                    <Form className="EditButton-form" onSubmit={handleSubmit}>
                     <Form.Label>
                       Date:
-                      <Form.Control type="date" name="date" value={date} min={minDate.toISOString().split("T")[0]} max={maxDate.toISOString().split("T")[0]} onChange={e => setDate(e.target.value)} required/>
+                      <Form.Control type="date" name="date" value={date.split("T")[0]} min={minDate.toISOString().split("T")[0]} max={maxDate.toISOString().split("T")[0]} onChange={e => setDate(e.target.value)}  required/>
                     </Form.Label><br></br>
                     <Form.Label>
                       Item:
